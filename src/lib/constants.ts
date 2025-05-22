@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'portfolio website',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'ShadCN UI'],
-    liveDemoUrl: '#', 
+    liveDemoUrl: '#',
     githubUrl: 'https://github.com/marcdejesus/portfolio-v2',
     images: [
       { url: 'https://placehold.co/800x600.png', alt: 'Project V2 Homepage', dataAiHint: 'website homepage' },
@@ -123,6 +123,26 @@ export const PROJECTS: Project[] = [
     client: 'Senior Design Capstone Project (Central Michigan University)',
     role: 'Project Lead / Developer',
     duration: 'Academic Year (2024-2025)'
+  },
+  {
+    id: '7',
+    slug: 'de-jesus-digital-solutions-website',
+    title: 'De Jesus Digital Solutions Website',
+    category: 'Web Development',
+    shortDescription: "Official website for De Jesus Digital Solutions, featuring client consultations, service requests, email marketing, and secure client portal for orders and payments.",
+    longDescription: "The De Jesus Digital Solutions website serves as the primary online presence for the company. It's a full-stack application built with Next.js for the frontend, Supabase for the backend and database, and Node.js for specific server-side logic. Key features include a system for email marketing campaigns, contact forms for consultations and service requests, and a secure client portal where logged-in users can track their project orders, make payments, and access their completed digital products. The platform aims to streamline client interaction and project management.",
+    coverImageUrl: 'https://placehold.co/600x400.png',
+    dataAiHint: 'business website homepage',
+    technologies: ['Next.js', 'Supabase', 'Node.js', 'React', 'Tailwind CSS', 'Stripe API', 'Email Marketing', 'Client Portal'],
+    liveDemoUrl: 'https://dejesusdigitalsolutions.com',
+    // githubUrl: undefined, // Omitted as it might be closed-source
+    images: [
+      { url: 'https://placehold.co/800x600.png', alt: 'DJDS Homepage', dataAiHint: 'company website' },
+      { url: 'https://placehold.co/800x600.png', alt: 'DJDS Client Portal', dataAiHint: 'client portal dashboard' },
+    ],
+    client: 'De Jesus Digital Solutions',
+    role: 'Full-Stack Developer',
+    duration: 'Ongoing Development'
   }
 ];
 
@@ -268,8 +288,8 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch }, // Changed icon
-  { name: 'AI', icon: Cpu }, // Replaced Postman
+  { name: 'Docker', icon: GitBranch },
+  { name: 'AI', icon: Cpu },
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
@@ -362,4 +382,7 @@ export const CERTIFICATIONS = [
     year: "In Progress"
   }
 ];
+
+
+
     
