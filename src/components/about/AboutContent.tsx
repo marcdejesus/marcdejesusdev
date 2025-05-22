@@ -31,7 +31,7 @@ export function AboutContent() {
         <motion.div variants={itemVariants} className="lg:col-span-1 space-y-8">
           <div className="relative w-full aspect-square rounded-full overflow-hidden shadow-xl mx-auto max-w-xs lg:max-w-none">
             <Image
-              src="https://placehold.co/400x400.png"
+              src="/headshot.jpg"
               alt="Marc De Jesus - Headshot"
               width={400}
               height={400}

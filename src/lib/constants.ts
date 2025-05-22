@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     additionalCategories: ['Consultation'],
     shortDescription: 'Proposed community website for a church featuring social interactions, business details, and event planning.',
     longDescription: "A proposal for a comprehensive community website for the First Baptist Church of Fenton. The platform aims to enhance member engagement through social features, provide clear information about the church's mission and activities, and streamline event planning and management. The technical stack proposed is MERN (MongoDB, Express, React, Node.js). This project also encompassed consultation on digital strategy for community outreach and engagement.",
-    coverImageUrl: 'https://placehold.co/600x400.png',
+    coverImageUrl: '/bible.webp',
     dataAiHint: 'church community website',
     technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'Consultation', 'Community Engagement', 'Event Planning'],
     liveDemoUrl: 'https://firstbaptistchurchfenton.vercel.app/',
@@ -48,7 +48,7 @@ export const PROJECTS: Project[] = [
     category: 'Mobile App',
     shortDescription: 'A prototype mobile app using AI for gamified learning, featuring AI-generated courses and social elements. Developed for a Senior Design Capstone.',
     longDescription: 'This Gamified AI Learning Application is a prototype developed as a Senior Design Capstone project at Central Michigan University. It leverages React Native for the front-end, a Node.js backend, MongoDB for data storage, and the OpenAI API for its core AI functionalities. The application aims to make learning more engaging through features like AI-assisted learning, personalized AI-generated courses, educational minigames, progress tracking, quizzes, and social components like leaderboards. This project explores the intersection of gamification, artificial intelligence, and mobile education. This is a closed-source project.',
-    coverImageUrl: 'https://placehold.co/600x400.png',
+    coverImageUrl: '/tymelyne.png',
     dataAiHint: 'ai learning app',
     technologies: ['React Native', 'MongoDB', 'OpenAI API', 'Node.js', 'AI/ML', 'Gamification'],
     liveDemoUrl: 'https://www.youtube.com/watch?v=placeholder_video_id', // Placeholder YouTube link
@@ -64,7 +64,7 @@ export const PROJECTS: Project[] = [
     category: 'Web Development',
     shortDescription: "Official website for De Jesus Digital Solutions, featuring client consultations, service requests, email marketing, and secure client portal for orders and payments.",
     longDescription: "The De Jesus Digital Solutions website serves as the primary online presence for the company. It's a full-stack application built with Next.js for the frontend, Supabase for the backend and database, and Node.js for specific server-side logic. Key features include a system for email marketing campaigns, contact forms for consultations and service requests, and a secure client portal where logged-in users can track their project orders, make payments, and access their completed digital products. The platform aims to streamline client interaction and project management.",
-    coverImageUrl: 'https://placehold.co/600x400.png',
+    coverImageUrl: '/djds.png',
     dataAiHint: 'business website homepage',
     technologies: ['Next.js', 'Supabase', 'Node.js', 'React', 'Tailwind CSS', 'Stripe API', 'Email Marketing', 'Client Portal'],
     liveDemoUrl: 'https://dejesusdigitalsolutions.com',
@@ -84,7 +84,7 @@ export const PROJECTS: Project[] = [
     category: 'Web Development',
     shortDescription: 'A recipe social media website with AI integration for recipe creation, user ratings, and comments.',
     longDescription: "Recipedium is a dynamic social media platform centered around recipes. It uniquely integrates AI (DeepSeek API) to assist users in generating new recipes. Users can share their culinary creations, rate recipes submitted by others, and leave comments detailing their experiences and modifications. Built on the MERN stack (MongoDB, Express.js, React, Node.js), Recipedium offers a rich, interactive experience for food enthusiasts to discover, create, and discuss recipes.",
-    coverImageUrl: 'https://placehold.co/600x400.png',
+    coverImageUrl: '/robochef.png',
     dataAiHint: 'recipe food social',
     technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'DeepSeek API', 'AI Integration', 'Social Media Features'],
     liveDemoUrl: 'https://recipedium.vercel.app',
@@ -99,7 +99,7 @@ export const PROJECTS: Project[] = [
     category: 'Web Development',
     shortDescription: 'A dedicated website to enhance SEO for an AirBNB property listing, built with Next.js and TailwindCSS.',
     longDescription: "Treasure Coast Getaway is a specialized website developed to boost the search engine visibility of an AirBNB property. Leveraging the power of Next.js for server-side rendering and static site generation capabilities, combined with the utility-first styling of TailwindCSS, this project aims to attract more organic traffic to the property's booking page. The site features property details, image galleries, and local attraction information, all optimized for search engines.",
-    coverImageUrl: 'https://placehold.co/600x400.png',
+    coverImageUrl: '/treasurecoast.webp',
     dataAiHint: 'vacation rental website',
     technologies: ['Next.js', 'TailwindCSS', 'SEO', 'AirBNB Promotion'],
     liveDemoUrl: 'https://treasure-coast-getaway.vercel.app/',
@@ -133,7 +133,7 @@ export const UPDATE_POSTS: UpdatePost[] = [
       <p>I am excited to apply this knowledge to my future work, developing innovative solutions that leverage AI for enhanced efficiency and problem-solving. This certification has solidified my understanding of how to create robust AI-powered applications.</p>
       <p>Furthermore, this experience has underscored the importance of Prompt Engineering. If you are looking to grow as a professional in 2025, I strongly suggest familiarizing yourself with how to effectively communicate with and guide AI models to achieve desired outcomes. It's a critical skill in the evolving landscape of artificial intelligence.</p>
     `,
-    coverImageUrl: 'https://placehold.co/600x400.png',
+    coverImageUrl: '/vanderbilt.png',
     dataAiHint: 'AI agent certificate',
     author: BRAND_NAME,
     tags: ['Professional Development', 'AI', 'Agent Development', 'Vanderbilt University', 'Prompt Engineering', 'Automation'],
@@ -160,7 +160,7 @@ export const UPDATE_POSTS: UpdatePost[] = [
       <p>As I embark on my professional career, I carry forward a strong technical foundation from my computer science studies, complemented by the innovative spirit nurtured by the College of Engineering and the leadership skills developed through my fraternity. I am eager to apply this holistic skill set to contribute to meaningful projects and continue learning and growing in the field of technology.</p>
       <p>Fire Up Chips!</p>
     `,
-    coverImageUrl: 'https://placehold.co/600x400.png',
+    coverImageUrl: '/graduated.png',
     dataAiHint: 'graduation cap university',
     author: BRAND_NAME,
     tags: ['Graduation', 'Central Michigan University', 'Computer Science', 'Entrepreneurship', 'Education', 'College of Engineering', 'Fraternity'],
@@ -185,7 +185,7 @@ export const UPDATE_POSTS: UpdatePost[] = [
       <p>I’ve already begun applying these principles directly to my own design practices. This has resulted in more thoughtful, inclusive, and intuitive user experiences in my projects. Understanding the 'why' behind design decisions and grounding them in user research has significantly enhanced the quality and effectiveness of my work.</p>
       <p>This certification reinforces my commitment to creating digital products that are not only functional but also delightful and accessible for all users.</p>
     `,
-    coverImageUrl: 'https://placehold.co/600x400.png',
+    coverImageUrl: '/googleux.jpg',
     dataAiHint: 'UX design certificate',
     author: BRAND_NAME,
     tags: ['Professional Development', 'UX Design', 'Google Certification', 'Coursera', 'User Experience'],
