@@ -91,6 +91,21 @@ export const PROJECTS: Project[] = [
     githubUrl: 'https://github.com/marcdejesus/recipeblog',
     role: 'Full-Stack Developer',
     duration: 'Personal Project'
+  },
+  {
+    id: '9',
+    slug: 'treasure-coast-getaway',
+    title: 'Treasure Coast Getaway',
+    category: 'Web Development',
+    shortDescription: 'A dedicated website to enhance SEO for an AirBNB property listing, built with Next.js and TailwindCSS.',
+    longDescription: "Treasure Coast Getaway is a specialized website developed to boost the search engine visibility of an AirBNB property. Leveraging the power of Next.js for server-side rendering and static site generation capabilities, combined with the utility-first styling of TailwindCSS, this project aims to attract more organic traffic to the property's booking page. The site features property details, image galleries, and local attraction information, all optimized for search engines.",
+    coverImageUrl: 'https://placehold.co/600x400.png',
+    dataAiHint: 'vacation rental website',
+    technologies: ['Next.js', 'TailwindCSS', 'SEO', 'AirBNB Promotion'],
+    liveDemoUrl: 'https://treasurecoastgetaway.vercel.app',
+    // No GitHub URL as it's primarily an SEO/marketing site
+    role: 'Developer',
+    duration: 'Client Project'
   }
 ];
 
@@ -236,8 +251,8 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch },
-  { name: 'AI', icon: Cpu },
+  { name: 'Docker', icon: GitBranch }, // Using GitBranch icon for Docker as requested
+  { name: 'AI', icon: Cpu }, // Added AI to toolset
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
@@ -330,3 +345,4 @@ export const CERTIFICATIONS = [
     year: "In Progress"
   }
 ];
+
