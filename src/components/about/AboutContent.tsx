@@ -21,7 +21,7 @@ export function AboutContent() {
   };
 
   return (
-    <motion.section 
+    <motion.section
       className="container mx-auto px-4 py-16 md:py-24"
       variants={containerVariants}
       initial="hidden"
@@ -58,7 +58,7 @@ export function AboutContent() {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="w-full" asChild>
-              <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer"> 
+              <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 <Download className="mr-2 h-5 w-5" /> Download Resume
               </Link>
             </Button>
@@ -70,14 +70,14 @@ export function AboutContent() {
             <h1 className="text-4xl font-bold mb-6">About Me</h1>
             <div className="prose prose-lg dark:prose-invert max-w-none space-y-6">
               <p>
-                Creative and detail-oriented Front-End Developer with a foundation in full-stack development and a strong passion for user-centered design.
+                Creative and detail-oriented Software Engineer with a foundation in full-stack development and a strong passion for user-centered design.
               </p>
               <p>
-                My journey in tech has been fueled by a relentless curiosity and a desire to continuously learn and adapt to new technologies. 
+                My journey in tech has been fueled by a relentless curiosity and a desire to continuously learn and adapt to new technologies.
                 I believe in the power of collaboration and strive to build not just software, but also strong relationships with clients and team members.
               </p>
               <p>
-                Beyond coding and design, I enjoy staying active, exploring new technologies, and occasionally [mention a hobby if you want to add one, e.g., working on personal tech projects]. 
+                Beyond coding and design, I enjoy staying active, spending time with friends, trying new things, and learning new skills.
                 This balance helps me bring fresh perspectives to my professional work.
               </p>
             </div>
@@ -152,7 +152,7 @@ export function AboutContent() {
               ))}
             </div>
           </motion.div>
-          
+
           <div>
             <h2 className="text-3xl font-bold mb-8 flex items-center">
               <Star className="mr-3 h-7 w-7 text-primary" /> My Core Skills
@@ -172,7 +172,7 @@ export function AboutContent() {
               ))}
             </div>
           </div>
-          
+
           <div>
             <h2 className="text-3xl font-bold mb-8 flex items-center">
               <Settings className="mr-3 h-7 w-7 text-primary" /> My Toolset
@@ -182,8 +182,8 @@ export function AboutContent() {
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               {TOOLSET.map((tool) => (
-                <motion.div 
-                  key={tool.name} 
+                <motion.div
+                  key={tool.name}
                   variants={itemVariants}
                   className="flex flex-col items-center p-3 bg-muted/50 rounded-lg hover:bg-accent transition-colors min-w-[90px] text-center"
                   title={tool.name}
@@ -216,5 +216,3 @@ export function AboutContent() {
     </motion.section>
   );
 }
-
-    
