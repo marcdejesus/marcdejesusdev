@@ -1,8 +1,8 @@
 import type { Project, Skill, SocialLink, Tool, NavItem, ProjectCategory } from '@/types';
 import { Github, Linkedin, Twitter, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText } from 'lucide-react';
 
-export const APP_NAME = "DeJesus Digital Portfolio";
-export const BRAND_NAME = "DeJesus Digital Solutions";
+export const APP_NAME = "Marc De Jesus Portfolio";
+export const BRAND_NAME = "Marc De Jesus";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/' },
@@ -37,7 +37,7 @@ export const PROJECTS: Project[] = [
       { url: 'https://placehold.co/800x600.png', alt: 'Project V2 Homepage', dataAiHint: 'website homepage' },
       { url: 'https://placehold.co/800x600.png', alt: 'Project V2 Detail Page', dataAiHint: 'project detail' },
     ],
-    client: BRAND_NAME,
+    client: BRAND_NAME, // This will now be "Marc De Jesus"
     role: 'Full-Stack Developer & UI/UX Designer',
     duration: '2 Months'
   },
@@ -92,9 +92,9 @@ export const PROJECTS: Project[] = [
 export const PROJECT_CATEGORIES: ProjectCategory[] = ['Web Development', 'UI/UX Design', 'Mobile App', 'Consultation'];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { name: 'GitHub', url: 'https://github.com/yourusername', icon: Github },
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: Linkedin },
-  { name: 'Twitter', url: 'https://twitter.com/yourusername', icon: Twitter },
+  { name: 'GitHub', url: 'https://github.com/yourusername', icon: Github }, // Remember to update 'yourusername'
+  { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: Linkedin }, // Remember to update 'yourusername'
+  { name: 'Twitter', url: 'https://twitter.com/yourusername', icon: Twitter }, // Remember to update 'yourusername'
 ];
 
 export const CORE_SKILLS: Skill[] = [

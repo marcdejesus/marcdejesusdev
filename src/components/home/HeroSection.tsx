@@ -64,7 +64,7 @@ export function HeroSection() {
         >
           <Image
             src="https://placehold.co/700x500.png"
-            alt="DeJesus Digital Solutions - Hero Image"
+            alt={`${BRAND_NAME} - Hero Image`}
             width={700}
             height={500}
             priority

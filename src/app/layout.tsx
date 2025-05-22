@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: APP_NAME,
     template: `%s | ${APP_NAME}`,
   },
-  description: `Digital Portfolio of ${APP_NAME}, showcasing projects and skills in web development, UI/UX design, and more.`,
+  description: `Digital Portfolio of Marc De Jesus, showcasing projects and skills in web development, UI/UX design, and more.`,
 };
 
 export default function RootLayout({

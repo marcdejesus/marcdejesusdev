@@ -32,7 +32,7 @@ export function AboutContent() {
           <div className="relative w-full aspect-square rounded-full overflow-hidden shadow-xl mx-auto max-w-xs lg:max-w-none">
             <Image
               src="https://placehold.co/400x400.png"
-              alt="Your Name - Professional Photo"
+              alt="Marc De Jesus - Professional Photo"
               width={400}
               height={400}
               className="object-cover"
@@ -40,7 +40,7 @@ export function AboutContent() {
               priority
             />
           </div>
-          <h2 className="text-3xl font-bold text-center">Your Name</h2>
+          <h2 className="text-3xl font-bold text-center">Marc De Jesus</h2>
           <p className="text-center text-primary text-lg font-medium">{BRAND_NAME}</p>
           <div className="flex justify-center space-x-3">
             {SOCIAL_LINKS.map(link => (
@@ -71,8 +71,8 @@ export function AboutContent() {
             <h1 className="text-4xl font-bold mb-6">About Me</h1>
             <div className="prose prose-lg dark:prose-invert max-w-none space-y-6">
               <p>
-                Hello! I&apos;m a passionate and results-driven digital professional specializing in creating dynamic and user-friendly web and mobile experiences. 
-                With a strong foundation in modern development practices and a keen eye for design, I thrive on transforming complex ideas into elegant, efficient solutions at {BRAND_NAME}.
+                Hello! I&apos;m Marc De Jesus, a passionate and results-driven digital professional specializing in creating dynamic and user-friendly web and mobile experiences. 
+                With a strong foundation in modern development practices and a keen eye for design, I thrive on transforming complex ideas into elegant, efficient solutions.
               </p>
               <p>
                 My journey in tech has been fueled by a relentless curiosity and a desire to continuously learn and adapt to new technologies. 

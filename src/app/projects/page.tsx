@@ -4,7 +4,7 @@ import { PROJECTS, APP_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: `Projects | ${APP_NAME}`,
-  description: 'Explore a collection of projects by DeJesus Digital Solutions, showcasing expertise in web development, UI/UX design, and mobile applications.',
+  description: 'Explore a collection of projects by Marc De Jesus, showcasing expertise in web development, UI/UX design, and mobile applications.',
 };
 
 export default function ProjectsPage() {

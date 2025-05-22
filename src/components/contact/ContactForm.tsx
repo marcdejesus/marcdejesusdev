@@ -68,7 +68,7 @@ export function ContactForm() {
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Get in Touch</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
           Have a project in mind or just want to say hi? Fill out the form below or connect with me on social media. 
-          Let&apos;s build something great with {BRAND_NAME}!
+          Let&apos;s build something great together!
         </p>
       </motion.div>
 
@@ -84,7 +84,7 @@ export function ContactForm() {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder="Your Name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -97,7 +97,7 @@ export function ContactForm() {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="john.doe@example.com" {...field} />
+                        <Input type="email" placeholder="your.email@example.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -224,7 +224,7 @@ export function ContactForm() {
             </p>
             <div>
               <h4 className="font-semibold mb-1">Email</h4>
-              <a href="mailto:your.email@example.com" className="text-primary hover:underline">your.email@example.com</a> {/* Replace with actual email */}
+              <a href="mailto:marc.dejesus@example.com" className="text-primary hover:underline">marc.dejesus@example.com</a> {/* Replace with actual email */}
             </div>
              <div>
               <h4 className="font-semibold mb-2">Location</h4>
