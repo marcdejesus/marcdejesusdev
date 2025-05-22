@@ -76,6 +76,21 @@ export const PROJECTS: Project[] = [
     client: 'De Jesus Digital Solutions',
     role: 'Full-Stack Developer',
     duration: 'Ongoing Development'
+  },
+  {
+    id: '8',
+    slug: 'recipedium',
+    title: 'Recipedium',
+    category: 'Web Development',
+    shortDescription: 'A recipe social media website with AI integration for recipe creation, user ratings, and comments.',
+    longDescription: "Recipedium is a dynamic social media platform centered around recipes. It uniquely integrates AI (DeepSeek API) to assist users in generating new recipes. Users can share their culinary creations, rate recipes submitted by others, and leave comments detailing their experiences and modifications. Built on the MERN stack (MongoDB, Express.js, React, Node.js), Recipedium offers a rich, interactive experience for food enthusiasts to discover, create, and discuss recipes.",
+    coverImageUrl: 'https://placehold.co/600x400.png',
+    dataAiHint: 'recipe food social',
+    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'DeepSeek API', 'AI Integration', 'Social Media Features'],
+    liveDemoUrl: 'https://recipedium.vercel.app',
+    githubUrl: 'https://github.com/marcdejesus/recipeblog',
+    role: 'Full-Stack Developer',
+    duration: 'Personal Project'
   }
 ];
 
@@ -221,7 +236,7 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch }, // Using GitBranch icon as requested
+  { name: 'Docker', icon: GitBranch },
   { name: 'AI', icon: Cpu },
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
