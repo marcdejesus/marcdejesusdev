@@ -289,6 +289,16 @@ export const EDUCATION = [
 
 export const CERTIFICATIONS = [
   {
+    name: "Google UX Design",
+    issuer: "Google Career Certificates",
+    year: "2025"
+  },
+  {
+    name: "AI Agent Developer",
+    issuer: "Vanderbilt University",
+    year: "2025"
+  },
+  {
     name: "Meta Front-End Developer",
     issuer: "Meta",
     year: "In Progress"
@@ -319,6 +329,8 @@ export const CERTIFICATIONS = [
     year: "In Progress"
   }
 ];
+    
+
     
 
     
