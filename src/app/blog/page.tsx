@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { BlogGrid } from '@/components/blog/BlogGrid';
-import { BLOG_POSTS, APP_NAME } from '@/lib/constants';
+import { BLOG_POSTS, APP_NAME, BRAND_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: `Blog | ${APP_NAME}`,
