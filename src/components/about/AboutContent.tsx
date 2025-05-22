@@ -1,18 +1,18 @@
+
 'use client';
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { CORE_SKILLS, TOOLSET, BRAND_NAME, SOCIAL_LINKS } from '@/lib/constants';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
+import { CORE_SKILLS, TOOLSET, SOCIAL_LINKS, PROFESSIONAL_EXPERIENCE, EDUCATION, CERTIFICATIONS, BRAND_NAME } from '@/lib/constants';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Download, MessageSquare, Star, Briefcase, Brain } from 'lucide-react';
+import { Download, MessageSquare, Star, Briefcase, Brain, GraduationCap, Award, Building, CalendarDays, CircleUser } from 'lucide-react';
 
 export function AboutContent() {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.2 } }
+    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
   };
 
   const itemVariants = {
@@ -40,8 +40,8 @@ export function AboutContent() {
               priority
             />
           </div>
-          <h2 className="text-3xl font-bold text-center">Marc De Jesus</h2>
-          <p className="text-center text-primary text-lg font-medium">{BRAND_NAME}</p>
+          <h2 className="text-3xl font-bold text-center">{BRAND_NAME}</h2>
+          <p className="text-center text-primary text-lg font-medium">Full-Stack Developer</p>
           <div className="flex justify-center space-x-3">
             {SOCIAL_LINKS.map(link => (
               <Button key={link.name} variant="outline" size="icon" asChild>
@@ -54,12 +54,11 @@ export function AboutContent() {
           <div className="flex flex-col sm:flex-row lg:flex-col gap-3 pt-4">
             <Button size="lg" className="w-full" asChild>
               <Link href="/contact">
-                <MessageSquare className="mr-2 h-5 w-5" /> Hire Me
+                <MessageSquare className="mr-2 h-5 w-5" /> Hire Me / Contact
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="w-full" asChild>
-              {/* Link to a resume PDF if available */}
-              <Link href="/resume.pdf" target="_blank"> 
+              <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer"> 
                 <Download className="mr-2 h-5 w-5" /> Download Resume
               </Link>
             </Button>
@@ -71,43 +70,103 @@ export function AboutContent() {
             <h1 className="text-4xl font-bold mb-6">About Me</h1>
             <div className="prose prose-lg dark:prose-invert max-w-none space-y-6">
               <p>
-                Hello! I&apos;m Marc De Jesus, a passionate and results-driven digital professional specializing in creating dynamic and user-friendly web and mobile experiences. 
-                With a strong foundation in modern development practices and a keen eye for design, I thrive on transforming complex ideas into elegant, efficient solutions.
+                Creative and detail-oriented Front-End Developer with a foundation in full-stack development and a strong passion for user-centered design.
               </p>
               <p>
                 My journey in tech has been fueled by a relentless curiosity and a desire to continuously learn and adapt to new technologies. 
                 I believe in the power of collaboration and strive to build not just software, but also strong relationships with clients and team members.
               </p>
               <p>
-                Beyond coding and design, I enjoy [mention a hobby or two, e.g., exploring new hiking trails, experimenting with creative cooking, or contributing to open-source projects]. 
+                Beyond coding and design, I enjoy staying active, exploring new technologies, and occasionally [mention a hobby if you want to add one, e.g., working on personal tech projects]. 
                 This balance helps me bring fresh perspectives to my professional work.
               </p>
             </div>
           </div>
 
+          <motion.div variants={itemVariants}>
+            <h2 className="text-3xl font-bold mb-8 flex items-center">
+              <Briefcase className="mr-3 h-7 w-7 text-primary" /> Professional Experience
+            </h2>
+            <div className="space-y-6">
+              {PROFESSIONAL_EXPERIENCE.map((exp, index) => (
+                <Card key={index} className="hover:shadow-md transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-xl">{exp.title}</CardTitle>
+                    <CardDescription className="flex flex-col sm:flex-row sm:items-center gap-x-4 gap-y-1 text-sm">
+                        <span className="flex items-center">
+                            <Building className="mr-1.5 h-4 w-4 text-muted-foreground" />
+                            {exp.company_url ? <Link href={exp.company_url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{exp.company}</Link> : exp.company }
+                        </span>
+                        <span className="flex items-center">
+                            <CalendarDays className="mr-1.5 h-4 w-4 text-muted-foreground" />
+                            {exp.dates}
+                        </span>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="list-disc list-inside space-y-2 text-sm text-muted-foreground pl-2">
+                      {exp.description.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <h2 className="text-3xl font-bold mb-8 flex items-center">
+              <GraduationCap className="mr-3 h-7 w-7 text-primary" /> Education
+            </h2>
+            <div className="space-y-6">
+              {EDUCATION.map((edu, index) => (
+                <Card key={index} className="hover:shadow-md transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-xl">{edu.degree}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{edu.institution}</p>
+                    <p className="text-sm text-muted-foreground">Graduation: {edu.graduation}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <h2 className="text-3xl font-bold mb-8 flex items-center">
+              <Award className="mr-3 h-7 w-7 text-primary" /> Certifications
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {CERTIFICATIONS.map((cert, index) => (
+                 <Card key={index} className="h-full hover:shadow-md transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{cert.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                    <p className="text-xs text-muted-foreground">Year: {cert.year}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </motion.div>
+          
           <div>
             <h2 className="text-3xl font-bold mb-8 flex items-center">
               <Star className="mr-3 h-7 w-7 text-primary" /> My Core Skills
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {CORE_SKILLS.map((skill) => (
                 <motion.div key={skill.name} variants={itemVariants}>
                   <Card className="h-full hover:shadow-md transition-shadow">
-                    <CardHeader>
-                      <CardTitle className="text-lg flex items-center">
-                        {skill.icon && <skill.icon className="mr-2 h-5 w-5 text-muted-foreground" />}
+                    <CardHeader className="py-4 px-4">
+                      <CardTitle className="text-base flex items-center">
+                        {skill.icon && <skill.icon className="mr-2 h-5 w-5 text-muted-foreground flex-shrink-0" />}
                         {skill.name}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      {skill.level && (
-                        <Progress value={skill.level} aria-label={`${skill.name} proficiency ${skill.level}%`} className="h-2 mb-2" />
-                      )}
-                      <p className="text-xs text-muted-foreground">
-                        {/* Placeholder for skill description, or remove if not needed */}
-                        Developing proficiency in {skill.name.toLowerCase()}.
-                      </p>
-                    </CardContent>
                   </Card>
                 </motion.div>
               ))}
@@ -116,7 +175,7 @@ export function AboutContent() {
           
           <div>
             <h2 className="text-3xl font-bold mb-8 flex items-center">
-              <Briefcase className="mr-3 h-7 w-7 text-primary" /> My Toolset
+              <Settings className="mr-3 h-7 w-7 text-primary" /> My Toolset
             </h2>
             <p className="text-muted-foreground mb-6">
               I work with a variety of modern tools and technologies to bring projects to life. Here are some of my favorites:
@@ -126,12 +185,13 @@ export function AboutContent() {
                 <motion.div 
                   key={tool.name} 
                   variants={itemVariants}
-                  className="flex flex-col items-center p-3 bg-muted/50 rounded-lg hover:bg-accent transition-colors min-w-[80px] text-center"
+                  className="flex flex-col items-center p-3 bg-muted/50 rounded-lg hover:bg-accent transition-colors min-w-[90px] text-center"
                   title={tool.name}
                 >
-                  {tool.icon && <tool.icon className="h-8 w-8 mb-2 text-primary" />}
-                  {tool.logoUrl && (
-                     <Image src={tool.logoUrl} alt={`${tool.name} logo`} width={32} height={32} className="mb-2" data-ai-hint={tool.dataAiHint || `${tool.name} logo`} />
+                  {tool.logoUrl ? (
+                     <Image src={tool.logoUrl} alt={`${tool.name} logo`} width={32} height={32} className="mb-2 object-contain" data-ai-hint={tool.dataAiHint || `${tool.name.toLowerCase()} logo`} />
+                  ) : tool.icon && (
+                     <tool.icon className="h-8 w-8 mb-2 text-primary" />
                   )}
                   <span className="text-xs font-medium">{tool.name}</span>
                 </motion.div>
@@ -156,3 +216,5 @@ export function AboutContent() {
     </motion.section>
   );
 }
+
+    

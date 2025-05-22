@@ -1,6 +1,6 @@
 
-import type { Project, Skill, SocialLink, Tool, NavItem, ProjectCategory, UpdatePost } from '@/types'; // Updated to UpdatePost
-import { Github, Linkedin, X, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper } from 'lucide-react'; // Added Newspaper
+import type { Project, Skill, SocialLink, Tool, NavItem, ProjectCategory, UpdatePost } from '@/types';
+import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle } from 'lucide-react'; // Added Triangle
 
 export const APP_NAME = "Marc De Jesus Portfolio";
 export const BRAND_NAME = "Marc De Jesus";
@@ -9,17 +9,18 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Projects', href: '/projects' },
   { label: 'About', href: '/about' },
-  { label: 'Updates', href: '/updates' }, // Changed from Blog to Updates, href to /updates
+  { label: 'Updates', href: '/updates' },
   { label: 'Contact', href: '/contact' },
 ];
 
+// KEY_SKILLS are used on the HeroSection, keep concise
 export const KEY_SKILLS: Skill[] = [
-  { name: 'Next.js & React', icon: Code, level: 95 },
-  { name: 'UI/UX Design', icon: Figma, level: 90 },
-  { name: 'Node.js & Express', icon: Database, level: 85 },
-  { name: 'Mobile App Development (React Native)', icon: Smartphone, level: 80 },
-  { name: 'TypeScript', icon: Code, level: 90 },
-  { name: 'Tailwind CSS', icon: LayoutDashboard, level: 95 },
+  { name: 'Next.js & React', icon: Code },
+  { name: 'UI/UX Design (Figma)', icon: Figma },
+  { name: 'Node.js & Express', icon: Server },
+  { name: 'Mobile App Development (React Native)', icon: Smartphone },
+  { name: 'TypeScript', icon: Code },
+  { name: 'Tailwind CSS', icon: LayoutDashboard },
 ];
 
 export const PROJECTS: Project[] = [
@@ -33,8 +34,8 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'portfolio website',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'ShadCN UI'],
-    liveDemoUrl: '#', 
-    githubUrl: 'https://github.com/marcdejesus/portfolio-v2', 
+    liveDemoUrl: '#',
+    githubUrl: 'https://github.com/marcdejesus/portfolio-v2',
     images: [
       { url: 'https://placehold.co/800x600.png', alt: 'Project V2 Homepage', dataAiHint: 'website homepage' },
       { url: 'https://placehold.co/800x600.png', alt: 'Project V2 Detail Page', dataAiHint: 'project detail' },
@@ -45,8 +46,8 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '2',
-    slug: 'e-commerce-platform',
-    title: 'E-commerce Platform',
+    slug: 'e-commerce-platform-showcase',
+    title: 'E-commerce Platform Showcase',
     category: 'Web Development',
     shortDescription: 'A full-featured e-commerce platform with product listings, cart, and checkout functionalities.',
     longDescription: 'Developed a robust e-commerce solution enabling businesses to sell products online. Features include user authentication, product management, a shopping cart, secure checkout process, and an admin dashboard for managing orders and inventory. Built using the MERN stack (MongoDB, Express, React, Node.js).',
@@ -61,15 +62,15 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '3',
-    slug: 'mobile-task-manager',
-    title: 'Mobile Task Manager',
+    slug: 'mobile-task-manager-showcase',
+    title: 'Mobile Task Manager Showcase',
     category: 'Mobile App',
     shortDescription: 'A cross-platform mobile app for task management and team collaboration.',
     longDescription: 'Designed and developed a React Native mobile application for individuals and teams to manage tasks, set deadlines, and track progress. Features include real-time updates, push notifications, and offline support. Focused on intuitive UI/UX for seamless productivity.',
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'mobile app',
     technologies: ['React Native', 'Firebase', 'Expo', 'TypeScript', 'Redux Toolkit'],
-    liveDemoUrl: '#', 
+    liveDemoUrl: '#',
     githubUrl: 'https://github.com/marcdejesus/task-manager-app',
     client: 'Tech Solutions Inc.',
     role: 'Mobile App Developer',
@@ -93,7 +94,7 @@ export const PROJECTS: Project[] = [
 
 export const PROJECT_CATEGORIES: ProjectCategory[] = ['Web Development', 'UI/UX Design', 'Mobile App', 'Consultation'];
 
-export const UPDATE_POSTS: UpdatePost[] = [ // Renamed from BLOG_POSTS, type UpdatePost[]
+export const UPDATE_POSTS: UpdatePost[] = [
   {
     id: '1',
     slug: 'case-study-ecommerce-revamp',
@@ -182,33 +183,63 @@ export const UPDATE_POSTS: UpdatePost[] = [ // Renamed from BLOG_POSTS, type Upd
   },
 ];
 
-
 export const SOCIAL_LINKS: SocialLink[] = [
   { name: 'GitHub', url: 'https://github.com/marcdejesus', icon: Github },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/marc-de-jes%C3%BAs-075185252/', icon: Linkedin },
-  { name: 'X', url: 'https://x.com/marcdejesusdev', icon: X },
+  { name: 'X', url: 'https://x.com/marcdejesusdev', icon: XIcon },
   { name: 'Instagram', url: 'https://www.instagram.com/marcdejesusdev/', icon: Instagram },
 ];
 
+// CORE_SKILLS for About Page - based on resume
 export const CORE_SKILLS: Skill[] = [
-  ...KEY_SKILLS,
-  { name: 'REST & GraphQL APIs', icon: Code, level: 88 },
-  { name: 'Version Control (Git)', icon: GitBranch, level: 95 },
-  { name: 'Agile Methodologies', icon: Briefcase, level: 90 },
-  { name: 'Problem Solving', icon: Search, level: 92 },
+  // Frontend
+  { name: 'Next.js', icon: Layers },
+  { name: 'React', icon: Code },
+  { name: 'React Native', icon: Smartphone },
+  { name: 'Vite', icon: Zap },
+  { name: 'TailwindCSS', icon: LayoutDashboard },
+  { name: 'Responsive Design', icon: Smartphone },
+  // Backend
+  { name: 'Node.js', icon: Server },
+  { name: 'Django', icon: Code }, // Generic code icon, as there isn't a specific Django one in Lucide
+  { name: 'Supabase', icon: Database },
+  { name: 'MongoDB', icon: Database },
+  { name: 'Oracle XE', icon: Database },
+  { name: 'PostgreSQL', icon: Database },
+  // Languages
+  { name: 'JavaScript', icon: Code },
+  { name: 'TypeScript', icon: Code },
+  { name: 'Python', icon: Code }, // Generic code icon
+  { name: 'Java', icon: Code }, // Generic code icon
+  { name: 'C#', icon: Code }, // Generic code icon
+  { name: 'SQL', icon: Database },
+  // API/Integrations (derived from project descriptions)
+  { name: 'OpenAI API', icon: Cpu },
+  { name: 'Google OAuth', icon: KeyRound },
+  { name: 'Stripe API', icon: CreditCard },
+  { name: 'Redis', icon: Bolt },
+  // Methodologies
+  { name: 'Agile Development', icon: Users },
+  { name: 'Design Research', icon: PenTool }, // Or Search/Brain if more appropriate
+  { name: 'Git & Version Control', icon: GitBranch },
+  { name: 'SEO', icon: Search }, // From company website features
 ];
 
 export const TOOLSET: Tool[] = [
-  { name: 'VS Code', icon: Code },
+  // Design
   { name: 'Figma', icon: Figma },
+  { name: 'Adobe Creative Cloud', icon: Layers, dataAiHint: "adobe creative suite" },
+  // Development
+  { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'React', logoUrl: 'https://placehold.co/40x40.png', dataAiHint: 'React logo' },
-  { name: 'Next.js', logoUrl: 'https://placehold.co/40x40.png', dataAiHint: 'NextJS logo' },
-  { name: 'Node.js', logoUrl: 'https://placehold.co/40x40.png', dataAiHint: 'NodeJS logo' },
-  { name: 'MongoDB', icon: Database },
-  { name: 'PostgreSQL', icon: Database },
   { name: 'Docker', logoUrl: 'https://placehold.co/40x40.png', dataAiHint: 'Docker logo' },
+  // Platforms
+  { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' }, // Using Triangle as a generic platform/deployment icon
+  { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
+  { name: 'Google Cloud', icon: Cloud, dataAiHint: 'Google Cloud logo' },
+  // Other
+  { name: 'Postman', logoUrl: 'https://placehold.co/40x40.png', dataAiHint: 'Postman logo' },
 ];
 
 export const CONTACT_FORM_OPTIONS = {
@@ -216,3 +247,61 @@ export const CONTACT_FORM_OPTIONS = {
   budgetRanges: ['N/A', '<$500 (Tutoring/Consult)', '$500 - $2,000', '$2,000 - $5,000', '$5,000 - $10,000', '$10,000+ (Project)'],
   timelines: ['ASAP', 'Flexible', 'Within 1 Week', '1-2 Weeks', '1 Month', 'Specific Date (mention in details)'],
 };
+
+// For About Page Sections
+export const PROFESSIONAL_EXPERIENCE = [
+  {
+    title: "Full-Stack Developer",
+    company: "De Jesus Digital Solutions, LLC",
+    company_url: "https://dejesusdigitalsolutions.com",
+    dates: "January 2025 - Present",
+    description: [
+      "(Team of 2) Developed a full-stack mobile application using React Native, Node.js, MongoDB Atlas, Docker, OpenAI API, and Git for Version Control. The app uses AI to generate courses for users and offers social features such as leaderboards and user data metric visualizations.",
+      "(Solo) Developed a website for our company using Vite, React, TailwindCSS, Supabase, Google OAuth. Has features such as email marketing, company blog, SEO, and consultation forms.",
+      "(Solo) Developed a website using Next.js, React, TailwindCSS, Node.js, MongoDB Atlas to generate revenue off of recipe searches. Uses a large recipe database, allows users to comment, like, save, and create recipes.",
+      "(Solo) Developed an e-commerce website for a client using Next.js, React, Supabase, Stripe, Redis."
+    ]
+  },
+  {
+    title: "Low Voltage Electrician",
+    company: "Low V Outdoor Lighting",
+    dates: "May 2024 - August 2024",
+    description: [
+      "Programmed satellite timers to account for daylight savings time to power lights.",
+      "Troubleshooted and installed low voltage systems."
+    ]
+  }
+];
+
+export const EDUCATION = [
+  {
+    degree: "Bachelor of Science in Computer Science",
+    institution: "Central Michigan University",
+    graduation: "May 2025"
+  },
+  {
+    degree: "High School Diploma",
+    institution: "L’Anse Creuse High School - North",
+    graduation: "June 2021"
+  }
+];
+
+export const CERTIFICATIONS = [
+  {
+    name: "Google UX Design",
+    issuer: "Google Career Certificates",
+    year: "2025"
+  },
+  {
+    name: "AI Agent Developer",
+    issuer: "Vanderbilt University",
+    year: "2025"
+  },
+  {
+    name: "Meta Front-End Developer",
+    issuer: "Meta",
+    year: "2025"
+  }
+];
+
+    
