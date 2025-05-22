@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -6,7 +7,7 @@ import { motion } from 'framer-motion';
 import type { Project } from '@/types';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Eye, Github, CalendarDays, UserCircle, Settings } from 'lucide-react';
+import { ArrowLeft, Eye, Github, CalendarDays, UserCircle, Settings, Youtube } from 'lucide-react'; // Added Youtube
 import { Separator } from '@/components/ui/separator';
 
 interface ProjectDetailClientProps {
@@ -26,6 +27,9 @@ export function ProjectDetailClient({ project }: ProjectDetailClientProps) {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } }
   };
+
+  const isYoutubeLink = project.liveDemoUrl && 
+                        (project.liveDemoUrl.includes('youtube.com') || project.liveDemoUrl.includes('youtu.be'));
 
   return (
     <motion.article 
@@ -137,7 +141,8 @@ export function ProjectDetailClient({ project }: ProjectDetailClientProps) {
               {project.liveDemoUrl && (
                 <Button asChild className="w-full">
                   <Link href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer">
-                    <Eye className="mr-2 h-4 w-4" /> Live Demo
+                    {isYoutubeLink ? <Youtube className="mr-2 h-4 w-4" /> : <Eye className="mr-2 h-4 w-4" />} 
+                    {isYoutubeLink ? "Watch Demo" : "Live Demo"}
                   </Link>
                 </Button>
               )}

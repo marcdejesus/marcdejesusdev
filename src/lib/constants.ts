@@ -1,6 +1,6 @@
 
 import type { Project, Skill, SocialLink, Tool, NavItem, ProjectCategory, UpdatePost } from '@/types';
-import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck, Eye } from 'lucide-react'; // Added Triangle, ShieldCheck, Eye
+import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck, Eye, Youtube } from 'lucide-react'; // Added Triangle, ShieldCheck, Eye, Youtube
 
 export const APP_NAME = "Marc De Jesus Portfolio";
 export const BRAND_NAME = "Marc De Jesus";
@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'portfolio website',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'ShadCN UI'],
-    liveDemoUrl: '#', // Intentionally # for this example as per original
+    liveDemoUrl: '#', 
     githubUrl: 'https://github.com/marcdejesus/portfolio-v2',
     images: [
       { url: 'https://placehold.co/800x600.png', alt: 'Project V2 Homepage', dataAiHint: 'website homepage' },
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'ecommerce platform',
     technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe API', 'Redux'],
-    liveDemoUrl: '#', // Intentionally # for this example as per original
+    liveDemoUrl: '#',
     githubUrl: 'https://github.com/marcdejesus/ecommerce-platform',
     client: 'Startup X',
     role: 'Lead Developer',
@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'mobile app',
     technologies: ['React Native', 'Firebase', 'Expo', 'TypeScript', 'Redux Toolkit'],
-    liveDemoUrl: '#', // Intentionally # for this example as per original
+    liveDemoUrl: '#',
     githubUrl: 'https://github.com/marcdejesus/task-manager-app',
     client: 'Tech Solutions Inc.',
     role: 'Mobile App Developer',
@@ -107,6 +107,22 @@ export const PROJECTS: Project[] = [
     client: 'First Baptist Church of Fenton',
     role: 'Full-Stack Developer & Consultant',
     duration: 'Proposal Phase'
+  },
+  {
+    id: '6',
+    slug: 'gamified-ai-learning-app',
+    title: 'Gamified AI Learning Application (Prototype)',
+    category: 'Mobile App',
+    shortDescription: 'A prototype mobile app using AI for gamified learning, featuring AI-generated courses and social elements. Developed for a Senior Design Capstone.',
+    longDescription: 'This Gamified AI Learning Application is a prototype developed as a Senior Design Capstone project at Central Michigan University. It leverages React Native for the front-end, a Node.js backend, MongoDB for data storage, and the OpenAI API for its core AI functionalities. The application aims to make learning more engaging through features like AI-assisted learning, personalized AI-generated courses, educational minigames, progress tracking, quizzes, and social components like leaderboards. This project explores the intersection of gamification, artificial intelligence, and mobile education. This is a closed-source project.',
+    coverImageUrl: 'https://placehold.co/600x400.png',
+    dataAiHint: 'ai learning app',
+    technologies: ['React Native', 'MongoDB', 'OpenAI API', 'Node.js', 'AI/ML', 'Gamification'],
+    liveDemoUrl: 'https://www.youtube.com/watch?v=placeholder_video_id', // Placeholder YouTube link
+    // githubUrl is intentionally omitted as it's closed-source
+    client: 'Senior Design Capstone Project (Central Michigan University)',
+    role: 'Project Lead / Developer',
+    duration: 'Academic Year (2024-2025)'
   }
 ];
 
@@ -252,8 +268,8 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch },
-  { name: 'AI', icon: Cpu },
+  { name: 'Docker', icon: GitBranch }, // Changed icon
+  { name: 'AI', icon: Cpu }, // Replaced Postman
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
@@ -346,5 +362,4 @@ export const CERTIFICATIONS = [
     year: "In Progress"
   }
 ];
-
     

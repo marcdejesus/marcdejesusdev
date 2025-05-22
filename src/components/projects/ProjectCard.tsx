@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -7,7 +8,7 @@ import type { Project } from '@/types';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Eye, Github } from 'lucide-react';
+import { ArrowRight, Eye, Github, Youtube } from 'lucide-react'; // Added Youtube
 
 interface ProjectCardProps {
   project: Project;
@@ -23,6 +24,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       transition: { delay: index * 0.1, type: 'spring', stiffness: 100 }
     }
   };
+
+  const isYoutubeLink = project.liveDemoUrl && 
+                        (project.liveDemoUrl.includes('youtube.com') || project.liveDemoUrl.includes('youtu.be'));
 
   return (
     <motion.div
@@ -67,8 +71,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           <div className="flex gap-2 mt-2 sm:mt-0">
             {project.liveDemoUrl && (
               <Button asChild variant="outline" size="icon">
-                <Link href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" title="Live Demo">
-                  <Eye className="h-4 w-4" />
+                <Link href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" title={isYoutubeLink ? "Watch Demo on YouTube" : "Live Demo"}>
+                  {isYoutubeLink ? <Youtube className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </Link>
               </Button>
             )}
