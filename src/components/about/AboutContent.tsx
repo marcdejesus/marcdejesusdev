@@ -7,7 +7,7 @@ import { CORE_SKILLS, TOOLSET, SOCIAL_LINKS, PROFESSIONAL_EXPERIENCE, EDUCATION,
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Download, MessageSquare, Star, Briefcase, Brain, GraduationCap, Award, Building, CalendarDays, CircleUser, Settings, ShieldCheck } from 'lucide-react';
+import { Download, MessageSquare, Star, Briefcase, Brain, GraduationCap, Award, Building, CalendarDays, CircleUser, Settings, ShieldCheck, GitBranch, Cpu } from 'lucide-react';
 
 export function AboutContent() {
   const containerVariants = {
@@ -136,7 +136,7 @@ export function AboutContent() {
 
           <motion.div variants={itemVariants}>
             <h2 className="text-3xl font-bold mb-8 flex items-center">
-              <Award className="mr-3 h-7 w-7 text-primary" /> Certifications
+              <Award className="mr-3 h-7 w-7 text-primary" /> Professional Career Certifications
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {CERTIFICATIONS.map((cert, index) => (
