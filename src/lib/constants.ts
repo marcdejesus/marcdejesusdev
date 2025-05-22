@@ -89,6 +89,22 @@ export const PROJECTS: Project[] = [
     client: 'SaaS Innovators Co.',
     role: 'UI/UX Consultant & Frontend Developer',
     duration: '3 Months'
+  },
+  {
+    id: '5',
+    slug: 'first-baptist-church-fenton-proposal',
+    title: 'First Baptist Church of Fenton (Proposal)',
+    category: 'Web Development', // Primary category
+    shortDescription: 'Proposed community website for a church featuring social interactions, business details, and event planning.',
+    longDescription: "A proposal for a comprehensive community website for the First Baptist Church of Fenton. The platform aims to enhance member engagement through social features, provide clear information about the church's mission and activities, and streamline event planning and management. The technical stack proposed is MERN (MongoDB, Express, React, Node.js). This project also encompassed consultation on digital strategy for community outreach and engagement.",
+    coverImageUrl: 'https://placehold.co/600x400.png',
+    dataAiHint: 'church community website',
+    technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'Consultation', 'Community Engagement', 'Event Planning'],
+    liveDemoUrl: undefined, // No live demo for a proposal
+    githubUrl: undefined, // No GitHub for a proposal typically
+    client: 'First Baptist Church of Fenton',
+    role: 'Full-Stack Developer & Consultant',
+    duration: 'Proposal Phase'
   }
 ];
 
@@ -329,6 +345,8 @@ export const CERTIFICATIONS = [
     year: "In Progress"
   }
 ];
+    
+
     
 
     
