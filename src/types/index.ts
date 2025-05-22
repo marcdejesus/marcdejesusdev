@@ -49,3 +49,16 @@ export interface Tool {
   logoUrl?: string; // URL for actual logo if lucide icon is not sufficient
   dataAiHint?: string; // For logo image
 }
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  date: string; // ISO date string
+  excerpt: string;
+  content: string; // Markdown or HTML content
+  coverImageUrl: string;
+  dataAiHint?: string;
+  author: string;
+  tags?: string[];
+}
