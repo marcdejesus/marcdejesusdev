@@ -1,6 +1,6 @@
 
 import type { Project, Skill, SocialLink, Tool, NavItem, ProjectCategory, UpdatePost } from '@/types';
-import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck } from 'lucide-react'; // Added Triangle, ShieldCheck
+import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck, Eye } from 'lucide-react'; // Added Triangle, ShieldCheck, Eye
 
 export const APP_NAME = "Marc De Jesus Portfolio";
 export const BRAND_NAME = "Marc De Jesus";
@@ -95,8 +95,8 @@ export const PROJECTS: Project[] = [
     id: '5',
     slug: 'first-baptist-church-fenton-proposal',
     title: 'First Baptist Church of Fenton (Proposal)',
-    category: 'Web Development', // Primary category
-    additionalCategories: ['Consultation'], // Additional category for filtering
+    category: 'Web Development', 
+    additionalCategories: ['Consultation'], 
     shortDescription: 'Proposed community website for a church featuring social interactions, business details, and event planning.',
     longDescription: "A proposal for a comprehensive community website for the First Baptist Church of Fenton. The platform aims to enhance member engagement through social features, provide clear information about the church's mission and activities, and streamline event planning and management. The technical stack proposed is MERN (MongoDB, Express, React, Node.js). This project also encompassed consultation on digital strategy for community outreach and engagement.",
     coverImageUrl: 'https://placehold.co/600x400.png',
@@ -252,13 +252,12 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch }, // Updated to use GitBranch icon
+  { name: 'Docker', icon: GitBranch }, 
+  { name: 'AI', icon: Cpu },
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
   { name: 'Google Cloud', icon: Cloud, dataAiHint: 'Google Cloud logo' },
-  // Other
-  { name: 'AI', icon: Cpu }, // Added AI with Cpu icon
 ];
 
 export const CONTACT_FORM_OPTIONS = {
@@ -347,4 +346,3 @@ export const CERTIFICATIONS = [
     year: "In Progress"
   }
 ];
-
