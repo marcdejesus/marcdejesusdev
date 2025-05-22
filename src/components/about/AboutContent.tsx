@@ -7,7 +7,7 @@ import { CORE_SKILLS, TOOLSET, SOCIAL_LINKS, PROFESSIONAL_EXPERIENCE, EDUCATION,
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Download, MessageSquare, Star, Briefcase, Brain, GraduationCap, Award, Building, CalendarDays, CircleUser } from 'lucide-react';
+import { Download, MessageSquare, Star, Briefcase, Brain, GraduationCap, Award, Building, CalendarDays, CircleUser, Settings } from 'lucide-react';
 
 export function AboutContent() {
   const containerVariants = {
