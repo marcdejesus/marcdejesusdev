@@ -201,7 +201,7 @@ export const CORE_SKILLS: Skill[] = [
   { name: 'Responsive Design', icon: Smartphone },
   // Backend
   { name: 'Node.js', icon: Server },
-  { name: 'Django', icon: Code }, // Generic code icon, as there isn't a specific Django one in Lucide
+  { name: 'Django', icon: Code },
   { name: 'Supabase', icon: Database },
   { name: 'MongoDB', icon: Database },
   { name: 'Oracle XE', icon: Database },
@@ -209,11 +209,11 @@ export const CORE_SKILLS: Skill[] = [
   // Languages
   { name: 'JavaScript', icon: Code },
   { name: 'TypeScript', icon: Code },
-  { name: 'Python', icon: Code }, // Generic code icon
-  { name: 'Java', icon: Code }, // Generic code icon
-  { name: 'C#', icon: Code }, // Generic code icon
+  { name: 'Python', icon: Code },
+  { name: 'Java', icon: Code },
+  { name: 'C#', icon: Code },
   { name: 'SQL', icon: Database },
-  // API/Integrations (derived from project descriptions)
+  // API/Integrations
   { name: 'OpenAI API', icon: Cpu },
   { name: 'Google OAuth', icon: KeyRound },
   { name: 'Stripe API', icon: CreditCard },
@@ -221,9 +221,9 @@ export const CORE_SKILLS: Skill[] = [
   { name: 'SSO (Single Sign-On)', icon: ShieldCheck },
   // Methodologies
   { name: 'Agile Development', icon: Users },
-  { name: 'Design Research', icon: PenTool }, // Or Search/Brain if more appropriate
+  { name: 'Design Research', icon: PenTool },
   { name: 'Git & Version Control', icon: GitBranch },
-  { name: 'SEO', icon: Search }, // From company website features
+  { name: 'SEO', icon: Search },
 ];
 
 export const TOOLSET: Tool[] = [
@@ -234,19 +234,13 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { 
-    name: 'Docker', 
-    svg: `<svg fill="#2496ED" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Docker</title><path d="M23.777.433A.391.391 0 0 0 23.387 0H.613A.391.391 0 0 0 .223.433L.011 13.37H24zM22.52 1.454H1.48v10.53h21.04zm-5.678 6.99a.72.72 0 0 1-.722.721H3.408a.72.72 0 0 1-.721-.721V6.293c0-.398.323-.721.721-.721H16.12c.398 0 .721.323.721.721zm-1.387-.001V6.293a.054.054 0 0 0-.054-.054H3.408a.054.054 0 0 0-.054.054v2.15c0 .03.024.054.054.054H15.401c.03 0 .054-.024.054-.054zm-3.89 2.082H9.385a.721.721 0 1 1 0-1.442h2.178a.721.721 0 1 1 0 1.442zm-4.567 0H4.818a.721.721 0 1 1 0-1.442h2.178a.721.721 0 1 1 0 1.442zM14.03 10.526H11.8a.721.721 0 1 1 0-1.442h2.23a.721.721 0 1 1 0 1.442zM8.51 5.09H6.943a.721.721 0 0 1 0-1.442H8.51a.721.721 0 0 1 0 1.442zm3.653 0h-1.567a.721.721 0 1 1 0-1.442h1.567a.721.721 0 1 1 0 1.442zm3.653 0h-1.567a.721.721 0 1 1 0-1.442h1.567a.721.721 0 1 1 0 1.442zm3.653 0h-1.567a.721.721 0 1 1 0-1.442h1.567a.721.721 0 1 1 0 1.442zm1.258 0h-1.566a.721.721 0 1 1 0-1.442h1.567a.721.721 0 0 1 0 1.442z"/></svg>` 
-  },
+  { name: 'Docker', icon: GitBranch }, // Changed icon to GitBranch
   // Platforms
-  { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' }, // Using Triangle as a generic platform/deployment icon
+  { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
   { name: 'Google Cloud', icon: Cloud, dataAiHint: 'Google Cloud logo' },
   // Other
-  { 
-    name: 'Postman', 
-    svg: `<svg fill="#FF6C37" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Postman</title><path d="M20.55 11.4A7.753 7.753 0 0012.8 3.65a7.753 7.753 0 00-7.75 7.75 7.753 7.753 0 001.585 4.727V24h4.728v-4.337A7.817 7.817 0 0016.3 21.05a7.817 7.817 0 004.94-3.925 7.708 7.708 0 00-.69-5.725zM12.8 5.12a6.283 6.283 0 016.282 6.283A6.283 6.283 0 0112.8 17.68a6.283 6.283 0 01-6.282-6.28A6.283 6.283 0 0112.8 5.12zm0 8.4a2.118 2.118 0 110-4.237 2.118 2.118 0 010 4.237zm3.512-3.513a3.488 3.488 0 11-4.937 4.937 3.488 3.488 0 014.937-4.937z"/></svg>`
-  },
+  { name: 'AI', icon: Cpu }, // Added AI with Cpu icon
 ];
 
 export const CONTACT_FORM_OPTIONS = {
@@ -310,5 +304,7 @@ export const CERTIFICATIONS = [
     year: "2025"
   }
 ];
+
+    
 
     
