@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'vacation rental website',
     technologies: ['Next.js', 'TailwindCSS', 'SEO', 'AirBNB Promotion'],
-    liveDemoUrl: 'https://treasurecoastgetaway.vercel.app',
+    liveDemoUrl: 'https://treasure-coast-getaway.vercel.app/',
     // No GitHub URL as it's primarily an SEO/marketing site
     role: 'Developer',
     duration: 'Client Project'
