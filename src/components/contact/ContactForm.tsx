@@ -66,7 +66,16 @@ export function ContactForm() {
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Get in Touch</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
           Looking for support, have a question, interested in job opportunities, or need paid tutoring? 
-          Please fill out the form below. For freelance/contract offers, I operate through De Jesus Digital Solutions—select the appropriate project type. 
+          Please fill out the form below. For freelance/contract offers, I operate through{' '}
+          <a 
+            href="https://dejesusdigitalsolutions.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-primary hover:underline"
+          >
+            De Jesus Digital Solutions
+          </a>
+          —select the appropriate project type. 
           You can also connect with me on social media.
         </p>
       </motion.div>
@@ -244,7 +253,15 @@ export function ContactForm() {
             <div className="border p-4 rounded-lg bg-muted/30">
               <h4 className="font-semibold mb-2">Availability</h4>
               <p className="text-sm text-muted-foreground">
-                Open to discussing new opportunities, collaborations, and tutoring sessions. For freelance/contract projects, please note these are managed through De Jesus Digital Solutions.
+                Open to discussing new opportunities, collaborations, and tutoring sessions. For freelance/contract projects, please note these are managed through{' '}
+                 <a 
+                    href="https://dejesusdigitalsolutions.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-primary hover:underline"
+                  >
+                    De Jesus Digital Solutions
+                  </a>.
               </p>
             </div>
         </motion.div>
