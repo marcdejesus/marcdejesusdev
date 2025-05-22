@@ -25,73 +25,6 @@ export const KEY_SKILLS: Skill[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: '1',
-    slug: 'portfolio-website-v2',
-    title: 'Modern Portfolio Website V2',
-    category: 'Web Development',
-    shortDescription: 'An updated personal portfolio showcasing modern web technologies and design principles.',
-    longDescription: 'This project is the second iteration of my personal portfolio, built with Next.js, Tailwind CSS, and Framer Motion. It features a clean, responsive design, filterable project showcase, and an interactive contact form. The goal was to create a fast, accessible, and visually appealing platform to highlight my skills and projects.',
-    coverImageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'portfolio website',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'ShadCN UI'],
-    liveDemoUrl: '#',
-    githubUrl: 'https://github.com/marcdejesus/portfolio-v2',
-    images: [
-      { url: 'https://placehold.co/800x600.png', alt: 'Project V2 Homepage', dataAiHint: 'website homepage' },
-      { url: 'https://placehold.co/800x600.png', alt: 'Project V2 Detail Page', dataAiHint: 'project detail' },
-    ],
-    client: BRAND_NAME,
-    role: 'Full-Stack Developer & UI/UX Designer',
-    duration: '2 Months'
-  },
-  {
-    id: '2',
-    slug: 'e-commerce-platform-showcase',
-    title: 'E-commerce Platform Showcase',
-    category: 'Web Development',
-    shortDescription: 'A full-featured e-commerce platform with product listings, cart, and checkout functionalities.',
-    longDescription: 'Developed a robust e-commerce solution enabling businesses to sell products online. Features include user authentication, product management, a shopping cart, secure checkout process, and an admin dashboard for managing orders and inventory. Built using the MERN stack (MongoDB, Express, React, Node.js).',
-    coverImageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'ecommerce platform',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe API', 'Redux'],
-    liveDemoUrl: '#',
-    githubUrl: 'https://github.com/marcdejesus/ecommerce-platform',
-    client: 'Startup X',
-    role: 'Lead Developer',
-    duration: '6 Months'
-  },
-  {
-    id: '3',
-    slug: 'mobile-task-manager-showcase',
-    title: 'Mobile Task Manager Showcase',
-    category: 'Mobile App',
-    shortDescription: 'A cross-platform mobile app for task management and team collaboration.',
-    longDescription: 'Designed and developed a React Native mobile application for individuals and teams to manage tasks, set deadlines, and track progress. Features include real-time updates, push notifications, and offline support. Focused on intuitive UI/UX for seamless productivity.',
-    coverImageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'mobile app',
-    technologies: ['React Native', 'Firebase', 'Expo', 'TypeScript', 'Redux Toolkit'],
-    liveDemoUrl: '#',
-    githubUrl: 'https://github.com/marcdejesus/task-manager-app',
-    client: 'Tech Solutions Inc.',
-    role: 'Mobile App Developer',
-    duration: '4 Months'
-  },
-  {
-    id: '4',
-    slug: 'design-system-consultancy',
-    title: 'Design System Consultancy',
-    category: 'UI/UX Design',
-    additionalCategories: ['Consultation'],
-    shortDescription: 'Consulted on and helped implement a new design system for a growing SaaS company.',
-    longDescription: 'Worked closely with a SaaS company to establish a comprehensive design system. This involved auditing existing UI components, defining design principles, creating a style guide, and developing a library of reusable React components. The new system improved design consistency and development efficiency across their products.',
-    coverImageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'design system',
-    technologies: ['Figma', 'Storybook', 'React', 'Styled Components'],
-    client: 'SaaS Innovators Co.',
-    role: 'UI/UX Consultant & Frontend Developer',
-    duration: '3 Months'
-  },
-  {
     id: '5',
     slug: 'first-baptist-church-fenton-proposal',
     title: 'First Baptist Church of Fenton (Proposal)',
@@ -288,7 +221,7 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch },
+  { name: 'Docker', icon: GitBranch }, // Using GitBranch icon as requested
   { name: 'AI', icon: Cpu },
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
@@ -382,7 +315,3 @@ export const CERTIFICATIONS = [
     year: "In Progress"
   }
 ];
-
-
-
-    
