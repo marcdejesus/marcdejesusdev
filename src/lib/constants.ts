@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'portfolio website',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'ShadCN UI'],
-    liveDemoUrl: '#',
+    liveDemoUrl: '#', // Intentionally # for this example as per original
     githubUrl: 'https://github.com/marcdejesus/portfolio-v2',
     images: [
       { url: 'https://placehold.co/800x600.png', alt: 'Project V2 Homepage', dataAiHint: 'website homepage' },
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'ecommerce platform',
     technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe API', 'Redux'],
-    liveDemoUrl: '#',
+    liveDemoUrl: '#', // Intentionally # for this example as per original
     githubUrl: 'https://github.com/marcdejesus/ecommerce-platform',
     client: 'Startup X',
     role: 'Lead Developer',
@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'mobile app',
     technologies: ['React Native', 'Firebase', 'Expo', 'TypeScript', 'Redux Toolkit'],
-    liveDemoUrl: '#',
+    liveDemoUrl: '#', // Intentionally # for this example as per original
     githubUrl: 'https://github.com/marcdejesus/task-manager-app',
     client: 'Tech Solutions Inc.',
     role: 'Mobile App Developer',
@@ -95,8 +95,8 @@ export const PROJECTS: Project[] = [
     id: '5',
     slug: 'first-baptist-church-fenton-proposal',
     title: 'First Baptist Church of Fenton (Proposal)',
-    category: 'Web Development', 
-    additionalCategories: ['Consultation'], 
+    category: 'Web Development',
+    additionalCategories: ['Consultation'],
     shortDescription: 'Proposed community website for a church featuring social interactions, business details, and event planning.',
     longDescription: "A proposal for a comprehensive community website for the First Baptist Church of Fenton. The platform aims to enhance member engagement through social features, provide clear information about the church's mission and activities, and streamline event planning and management. The technical stack proposed is MERN (MongoDB, Express, React, Node.js). This project also encompassed consultation on digital strategy for community outreach and engagement.",
     coverImageUrl: 'https://placehold.co/600x400.png',
@@ -252,7 +252,7 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch }, 
+  { name: 'Docker', icon: GitBranch },
   { name: 'AI', icon: Cpu },
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
@@ -346,3 +346,5 @@ export const CERTIFICATIONS = [
     year: "In Progress"
   }
 ];
+
+    
