@@ -234,13 +234,13 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch }, // Changed icon to GitBranch
+  { name: 'Docker', icon: GitBranch }, // Using GitBranch icon for Docker
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
   { name: 'Google Cloud', icon: Cloud, dataAiHint: 'Google Cloud logo' },
   // Other
-  { name: 'AI', icon: Cpu }, // Added AI with Cpu icon
+  { name: 'AI', icon: Cpu },
 ];
 
 export const CONTACT_FORM_OPTIONS = {
@@ -289,21 +289,37 @@ export const EDUCATION = [
 
 export const CERTIFICATIONS = [
   {
-    name: "Google UX Design",
-    issuer: "Google Career Certificates",
-    year: "2025"
-  },
-  {
-    name: "AI Agent Developer",
-    issuer: "Vanderbilt University",
-    year: "2025"
-  },
-  {
     name: "Meta Front-End Developer",
     issuer: "Meta",
-    year: "2025"
+    year: "In Progress"
+  },
+  {
+    name: "Meta iOS Developer",
+    issuer: "Meta",
+    year: "In Progress"
+  },
+  {
+    name: "Meta Android Developer",
+    issuer: "Meta",
+    year: "In Progress"
+  },
+  {
+    name: "Meta Back-End Developer",
+    issuer: "Meta",
+    year: "In Progress"
+  },
+  {
+    name: "Google Cybersecurity",
+    issuer: "Google Career Certificates",
+    year: "In Progress"
+  },
+  {
+    name: "Google Digital-Marketing & E-Commerce",
+    issuer: "Google Career Certificates",
+    year: "In Progress"
   }
 ];
+    
 
     
 
