@@ -102,8 +102,8 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'church community website',
     technologies: ['MongoDB', 'Express', 'React', 'Node.js', 'Consultation', 'Community Engagement', 'Event Planning'],
-    liveDemoUrl: undefined, // No live demo for a proposal
-    githubUrl: undefined, // No GitHub for a proposal typically
+    liveDemoUrl: 'https://firstbaptistchurchfenton.vercel.app/',
+    githubUrl: 'https://github.com/marcdejesus/firstbaptistchurchfenton',
     client: 'First Baptist Church of Fenton',
     role: 'Full-Stack Developer & Consultant',
     duration: 'Proposal Phase'
@@ -252,13 +252,13 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch },
+  { name: 'Docker', icon: GitBranch }, // Updated to use GitBranch icon
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
   { name: 'Google Cloud', icon: Cloud, dataAiHint: 'Google Cloud logo' },
   // Other
-  { name: 'AI', icon: Cpu },
+  { name: 'AI', icon: Cpu }, // Added AI with Cpu icon
 ];
 
 export const CONTACT_FORM_OPTIONS = {
@@ -347,3 +347,4 @@ export const CERTIFICATIONS = [
     year: "In Progress"
   }
 ];
+
