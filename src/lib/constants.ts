@@ -198,6 +198,33 @@ export const UPDATE_POSTS: UpdatePost[] = [
     author: BRAND_NAME,
     tags: ['Case Study', 'Mobile App', 'React Native', 'Firebase', 'Project Management'],
   },
+  {
+    id: '4',
+    slug: 'graduated-central-michigan-university',
+    title: "Graduated from Central Michigan University: A Journey Through CS and Entrepreneurship",
+    date: '2025-05-10T12:00:00Z',
+    excerpt: 'Celebrating the completion of a Bachelor of Science in Computer Science from Central Michigan University, and reflecting on the valuable experiences gained in the CS program, the College of Engineering, and my fraternity.',
+    content: `
+      <p>It is with great pride and excitement that I announce my graduation from Central Michigan University with a Bachelor of Science in Computer Science on May 10, 2025. This journey has been transformative, equipping me not only with technical expertise but also with invaluable entrepreneurial insights.</p>
+      
+      <h2 class="text-2xl font-semibold mt-6 mb-3">The Central Michigan University Computer Science Program</h2>
+      <p>The Computer Science program at CMU offered a comprehensive curriculum that balanced theoretical knowledge with practical application. I delved into core areas such as software development, data structures and algorithms, database management, and artificial intelligence. The emphasis on hands-on projects and collaborative teamwork was particularly beneficial, allowing me to apply concepts to real-world scenarios and prepare for the dynamic tech industry.</p>
+      
+      <h2 class="text-2xl font-semibold mt-6 mb-3">Entrepreneurial Values from the College of Engineering</h2>
+      <p>My time within CMU's College of Engineering & Technology extended beyond just technical coursework. It fostered a spirit of innovation and problem-solving. Through various projects and interactions, I was exposed to design thinking, project management principles, and the importance of creating solutions that address tangible needs. This environment encouraged an entrepreneurial mindset, teaching me to approach challenges with creativity and a drive to build impactful products.</p>
+      
+      <h2 class="text-2xl font-semibold mt-6 mb-3">Leadership and Growth Through Fraternity Life</h2>
+      <p>My involvement in my fraternity provided a unique platform for personal and professional growth. Taking on leadership roles and participating in various initiatives helped hone my skills in teamwork, communication, event organization, and community engagement. These experiences were instrumental in developing soft skills that are crucial for any entrepreneurial endeavor, teaching me the importance of collaboration, networking, and effective leadership.</p>
+      
+      <h2 class="text-2xl font-semibold mt-6 mb-3">Looking Ahead</h2>
+      <p>As I embark on my professional career, I carry forward a strong technical foundation from my computer science studies, complemented by the innovative spirit nurtured by the College of Engineering and the leadership skills developed through my fraternity. I am eager to apply this holistic skill set to contribute to meaningful projects and continue learning and growing in the field of technology.</p>
+      <p>Fire Up Chips!</p>
+    `,
+    coverImageUrl: 'https://placehold.co/600x400.png',
+    dataAiHint: 'graduation cap university',
+    author: BRAND_NAME,
+    tags: ['Graduation', 'Central Michigan University', 'Computer Science', 'Entrepreneurship', 'Education', 'College of Engineering', 'Fraternity'],
+  },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -346,3 +373,5 @@ export const CERTIFICATIONS = [
   }
 ];
 
+
+    
