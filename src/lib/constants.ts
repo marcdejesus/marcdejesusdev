@@ -81,6 +81,7 @@ export const PROJECTS: Project[] = [
     slug: 'design-system-consultancy',
     title: 'Design System Consultancy',
     category: 'UI/UX Design',
+    additionalCategories: ['Consultation'],
     shortDescription: 'Consulted on and helped implement a new design system for a growing SaaS company.',
     longDescription: 'Worked closely with a SaaS company to establish a comprehensive design system. This involved auditing existing UI components, defining design principles, creating a style guide, and developing a library of reusable React components. The new system improved design consistency and development efficiency across their products.',
     coverImageUrl: 'https://placehold.co/600x400.png',
@@ -95,6 +96,7 @@ export const PROJECTS: Project[] = [
     slug: 'first-baptist-church-fenton-proposal',
     title: 'First Baptist Church of Fenton (Proposal)',
     category: 'Web Development', // Primary category
+    additionalCategories: ['Consultation'], // Additional category for filtering
     shortDescription: 'Proposed community website for a church featuring social interactions, business details, and event planning.',
     longDescription: "A proposal for a comprehensive community website for the First Baptist Church of Fenton. The platform aims to enhance member engagement through social features, provide clear information about the church's mission and activities, and streamline event planning and management. The technical stack proposed is MERN (MongoDB, Express, React, Node.js). This project also encompassed consultation on digital strategy for community outreach and engagement.",
     coverImageUrl: 'https://placehold.co/600x400.png',
@@ -250,7 +252,7 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch }, // Using GitBranch icon for Docker
+  { name: 'Docker', icon: GitBranch },
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
@@ -345,12 +347,3 @@ export const CERTIFICATIONS = [
     year: "In Progress"
   }
 ];
-    
-
-    
-
-    
-
-    
-
-    

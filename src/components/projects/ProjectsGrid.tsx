@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useMemo } from 'react';
@@ -18,9 +19,12 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
 
   const filteredProjects = useMemo(() => {
     return projects
-      .filter(project => 
-        selectedCategory === 'All' || project.category === selectedCategory
-      )
+      .filter(project => {
+        if (selectedCategory === 'All') return true;
+        if (project.category === selectedCategory) return true;
+        if (project.additionalCategories && project.additionalCategories.includes(selectedCategory)) return true;
+        return false;
+      })
       .filter(project => 
         project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.shortDescription.toLowerCase().includes(searchTerm.toLowerCase()) ||

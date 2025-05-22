@@ -24,7 +24,8 @@ export interface Project {
   id: string;
   slug: string;
   title: string;
-  category: ProjectCategory;
+  category: ProjectCategory; // Primary category
+  additionalCategories?: ProjectCategory[]; // Additional categories for filtering
   shortDescription: string;
   longDescription: string;
   coverImageUrl: string;
@@ -64,4 +65,3 @@ export interface UpdatePost { // Renamed from BlogPost
   author: string;
   tags?: string[];
 }
-
