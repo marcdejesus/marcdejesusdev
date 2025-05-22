@@ -48,7 +48,8 @@ export interface Tool {
   name:string;
   icon?: LucideIcon; // Lucide icon for the tool
   logoUrl?: string; // URL for actual logo if lucide icon is not sufficient
-  dataAiHint?: string; // For logo image
+  svg?: string; // Inline SVG code for the logo
+  dataAiHint?: string; // For logo image if logoUrl is used
 }
 
 export interface UpdatePost { // Renamed from BlogPost
@@ -63,3 +64,4 @@ export interface UpdatePost { // Renamed from BlogPost
   author: string;
   tags?: string[];
 }
+

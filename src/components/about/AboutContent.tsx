@@ -7,7 +7,7 @@ import { CORE_SKILLS, TOOLSET, SOCIAL_LINKS, PROFESSIONAL_EXPERIENCE, EDUCATION,
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Download, MessageSquare, Star, Briefcase, Brain, GraduationCap, Award, Building, CalendarDays, CircleUser, Settings } from 'lucide-react';
+import { Download, MessageSquare, Star, Briefcase, Brain, GraduationCap, Award, Building, CalendarDays, CircleUser, Settings, ShieldCheck } from 'lucide-react';
 
 export function AboutContent() {
   const containerVariants = {
@@ -188,7 +188,9 @@ export function AboutContent() {
                   className="flex flex-col items-center p-3 bg-muted/50 rounded-lg hover:bg-accent transition-colors min-w-[90px] text-center"
                   title={tool.name}
                 >
-                  {tool.logoUrl ? (
+                  {tool.svg ? (
+                    <div className="h-8 w-8 mb-2" dangerouslySetInnerHTML={{ __html: tool.svg }} />
+                  ) : tool.logoUrl ? (
                      <Image src={tool.logoUrl} alt={`${tool.name} logo`} width={32} height={32} className="mb-2 object-contain" data-ai-hint={tool.dataAiHint || `${tool.name.toLowerCase()} logo`} />
                   ) : tool.icon && (
                      <tool.icon className="h-8 w-8 mb-2 text-primary" />
@@ -216,3 +218,4 @@ export function AboutContent() {
     </motion.section>
   );
 }
+
