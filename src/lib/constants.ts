@@ -1,8 +1,8 @@
 import type { Project, Skill, SocialLink, Tool, NavItem, ProjectCategory, BlogPost } from '@/types';
-import { Github, Linkedin, Twitter, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Rss } from 'lucide-react';
+import { Github, Linkedin, X, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Rss } from 'lucide-react';
 
 export const APP_NAME = "Marc De Jesus Portfolio";
-export const BRAND_NAME = "Marc De Jesus";
+export const BRAND_NAME = "Marc De Jesus"; // Overall portfolio brand
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/' },
@@ -32,8 +32,8 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'portfolio website',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'ShadCN UI'],
-    liveDemoUrl: '#', // Replace with actual URL
-    githubUrl: 'https://github.com/yourusername/portfolio-v2', // Replace
+    liveDemoUrl: '#', 
+    githubUrl: 'https://github.com/marcdejesus/portfolio-v2', 
     images: [
       { url: 'https://placehold.co/800x600.png', alt: 'Project V2 Homepage', dataAiHint: 'website homepage' },
       { url: 'https://placehold.co/800x600.png', alt: 'Project V2 Detail Page', dataAiHint: 'project detail' },
@@ -53,7 +53,7 @@ export const PROJECTS: Project[] = [
     dataAiHint: 'ecommerce platform',
     technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe API', 'Redux'],
     liveDemoUrl: '#',
-    githubUrl: 'https://github.com/yourusername/ecommerce-platform',
+    githubUrl: 'https://github.com/marcdejesus/ecommerce-platform',
     client: 'Startup X',
     role: 'Lead Developer',
     duration: '6 Months'
@@ -68,8 +68,8 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'mobile app',
     technologies: ['React Native', 'Firebase', 'Expo', 'TypeScript', 'Redux Toolkit'],
-    liveDemoUrl: '#', // Link to app store or demo video
-    githubUrl: 'https://github.com/yourusername/task-manager-app',
+    liveDemoUrl: '#', 
+    githubUrl: 'https://github.com/marcdejesus/task-manager-app',
     client: 'Tech Solutions Inc.',
     role: 'Mobile App Developer',
     duration: '4 Months'
@@ -183,9 +183,10 @@ export default function DashboardPage() {
 
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { name: 'GitHub', url: 'https://github.com/yourusername', icon: Github }, // Remember to update 'yourusername'
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: Linkedin }, // Remember to update 'yourusername'
-  { name: 'Twitter', url: 'https://twitter.com/yourusername', icon: Twitter }, // Remember to update 'yourusername'
+  { name: 'GitHub', url: 'https://github.com/marcdejesus', icon: Github },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/marc-de-jes%C3%BAs-075185252/', icon: Linkedin },
+  { name: 'X', url: 'https://x.com/marcdejesusdev', icon: X },
+  { name: 'Instagram', url: 'https://www.instagram.com/marcdejesusdev/', icon: Instagram },
 ];
 
 export const CORE_SKILLS: Skill[] = [
@@ -210,7 +211,7 @@ export const TOOLSET: Tool[] = [
 ];
 
 export const CONTACT_FORM_OPTIONS = {
-  projectTypes: ['Web Development', 'UI/UX Design', 'Mobile App Development', 'Consultation', 'Other'],
-  budgetRanges: ['<$1,000', '$1,000 - $5,000', '$5,000 - $10,000', '$10,000 - $20,000', '$20,000+'],
-  timelines: ['1-2 Weeks', '1 Month', '1-3 Months', '3-6 Months', '6+ Months'],
+  projectTypes: ['General Question', 'Support Request', 'Job Inquiry', 'Paid Tutoring Session', 'Collaboration Idea', 'Freelance/Contract (via De Jesus Digital Solutions)', 'Other'],
+  budgetRanges: ['N/A', '<$500 (Tutoring/Consult)', '$500 - $2,000', '$2,000 - $5,000', '$5,000 - $10,000', '$10,000+ (Project)'],
+  timelines: ['ASAP', 'Flexible', 'Within 1 Week', '1-2 Weeks', '1 Month', 'Specific Date (mention in details)'],
 };

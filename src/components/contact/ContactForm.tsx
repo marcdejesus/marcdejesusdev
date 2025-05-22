@@ -1,3 +1,4 @@
+
 'use client';
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -22,11 +23,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider"; // Not directly used with RHF here, but could be an alternative for budget
 import { toast } from "@/hooks/use-toast";
-import { BRAND_NAME, CONTACT_FORM_OPTIONS, SOCIAL_LINKS } from "@/lib/constants";
+import { CONTACT_FORM_OPTIONS, SOCIAL_LINKS } from "@/lib/constants";
 import { contactFormSchema, type ContactFormValues, defaultValues } from "./ContactFormFields";
-import { Send, Linkedin, Github, Twitter } from "lucide-react";
+import { Send } from "lucide-react";
 import Link from "next/link";
 
 export function ContactForm() {
@@ -37,12 +37,10 @@ export function ContactForm() {
   });
 
   async function onSubmit(data: ContactFormValues) {
-    // In a real app, you would send this data to a backend or email service
-    // For now, we'll just log it and show a success toast
     console.log(data);
     toast({
       title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      description: "Thank you for reaching out. I'll get back to you as soon as possible.",
     });
     form.reset();
   }
@@ -67,8 +65,9 @@ export function ContactForm() {
       <motion.div variants={itemVariants} className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Get in Touch</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-          Have a project in mind or just want to say hi? Fill out the form below or connect with me on social media. 
-          Let&apos;s build something great together!
+          Looking for support, have a question, interested in job opportunities, or need paid tutoring? 
+          Please fill out the form below. For freelance/contract offers, I operate through De Jesus Digital Solutions—select the appropriate project type. 
+          You can also connect with me on social media.
         </p>
       </motion.div>
 
@@ -110,11 +109,11 @@ export function ContactForm() {
                 name="projectType"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Project Type</FormLabel>
+                    <FormLabel>Reason for Contact</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select a project type" />
+                          <SelectValue placeholder="Select a reason" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
@@ -133,16 +132,16 @@ export function ContactForm() {
                 name="projectDetails"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Project Details</FormLabel>
+                    <FormLabel>Details</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Tell me a little bit about your project..."
+                        placeholder="Please provide as much detail as possible..."
                         className="resize-y min-h-[120px]"
                         {...field}
                       />
                     </FormControl>
                     <FormDescription>
-                      Briefly describe your project, goals, and any specific requirements.
+                      Share details about your inquiry, project, question, or availability for tutoring.
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
@@ -155,7 +154,7 @@ export function ContactForm() {
                   name="budgetRange"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Budget Range (Optional)</FormLabel>
+                      <FormLabel>Budget Range (If Applicable)</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger>
@@ -177,7 +176,7 @@ export function ContactForm() {
                   name="timeline"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Preferred Timeline (Optional)</FormLabel>
+                      <FormLabel>Preferred Timeline (If Applicable)</FormLabel>
                        <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger>
@@ -220,15 +219,15 @@ export function ContactForm() {
         <motion.div variants={itemVariants} className="md:col-span-1 space-y-6">
             <h3 className="text-2xl font-semibold">Contact Information</h3>
             <p className="text-muted-foreground">
-              Feel free to reach out via email or connect on social media. I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of something amazing.
+              You can also reach me directly via email or connect on social media. I aim to respond to all inquiries within 24-48 hours.
             </p>
             <div>
               <h4 className="font-semibold mb-1">Email</h4>
-              <a href="mailto:marc.dejesus@example.com" className="text-primary hover:underline">marc.dejesus@example.com</a> {/* Replace with actual email */}
+              <a href="mailto:marcdejesusdev@gmail.com" className="text-primary hover:underline">marcdejesusdev@gmail.com</a>
             </div>
              <div>
               <h4 className="font-semibold mb-2">Location</h4>
-              <p className="text-muted-foreground">Your City, Your Country (Remote)</p> {/* Replace with actual location */}
+              <p className="text-muted-foreground">Macomb, MI (Remote/Hybrid)</p>
             </div>
             <div>
               <h4 className="font-semibold mb-3">Connect with me:</h4>
@@ -245,7 +244,7 @@ export function ContactForm() {
             <div className="border p-4 rounded-lg bg-muted/30">
               <h4 className="font-semibold mb-2">Availability</h4>
               <p className="text-sm text-muted-foreground">
-                Currently available for new projects and collaborations. Looking forward to hearing from you!
+                Open to discussing new opportunities, collaborations, and tutoring sessions. For freelance/contract projects, please note these are managed through De Jesus Digital Solutions.
               </p>
             </div>
         </motion.div>

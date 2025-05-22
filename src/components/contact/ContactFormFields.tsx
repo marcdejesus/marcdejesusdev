@@ -8,13 +8,13 @@ export const contactFormSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
-  projectType: z.enum(CONTACT_FORM_OPTIONS.projectTypes as [string, ...string[]], { // Cast to satisfy Zod enum
-    required_error: "You need to select a project type.",
+  projectType: z.enum(CONTACT_FORM_OPTIONS.projectTypes as [string, ...string[]], {
+    required_error: "You need to select a reason for contact.",
   }),
   projectDetails: z.string().min(10, {
-    message: "Please provide some details about your project (at least 10 characters).",
+    message: "Please provide some details (at least 10 characters).",
   }).max(1000, {
-    message: "Project details cannot exceed 1000 characters."
+    message: "Details cannot exceed 1000 characters."
   }),
   budgetRange: z.string().optional(),
   timeline: z.string().optional(),
@@ -26,8 +26,9 @@ export type ContactFormValues = z.infer<typeof contactFormSchema>;
 export const defaultValues: Partial<ContactFormValues> = {
   name: "",
   email: "",
+  projectType: CONTACT_FORM_OPTIONS.projectTypes[0], // Default to the first option
   projectDetails: "",
-  budgetRange: CONTACT_FORM_OPTIONS.budgetRanges[0],
-  timeline: CONTACT_FORM_OPTIONS.timelines[0],
+  budgetRange: CONTACT_FORM_OPTIONS.budgetRanges[0], // Default to N/A or first budget option
+  timeline: CONTACT_FORM_OPTIONS.timelines[0], // Default to first timeline option
   socialLink: "",
 };
