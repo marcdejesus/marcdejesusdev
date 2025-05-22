@@ -69,8 +69,8 @@ export function HeroSection() {
           variants={itemVariants}
         >
           <Image
-            src="https://placehold.co/700x500.png"
-            alt={`${BRAND_NAME} - Hero Image`}
+            src="/hero.png"
+            alt={`${BRAND_NAME}'s portfolio hero image`}
             width={700}
             height={500}
             priority

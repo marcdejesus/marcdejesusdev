@@ -32,7 +32,7 @@ export function AboutContent() {
           <div className="relative w-full aspect-square rounded-full overflow-hidden shadow-xl mx-auto max-w-xs lg:max-w-none">
             <Image
               src="https://placehold.co/400x400.png"
-              alt="Marc De Jesus - Professional Photo"
+              alt="Marc De Jesus - Headshot"
               width={400}
               height={400}
               className="object-cover"
