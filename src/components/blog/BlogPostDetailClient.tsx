@@ -4,14 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { format } from 'date-fns';
-import type { BlogPost } from '@/types';
+import type { UpdatePost } from '@/types'; // Changed from BlogPost
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, CalendarDays, UserCircle, Tag } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 interface BlogPostDetailClientProps {
-  post: BlogPost;
+  post: UpdatePost; // Changed from BlogPost
 }
 
 export function BlogPostDetailClient({ post }: BlogPostDetailClientProps) {
@@ -38,7 +38,7 @@ export function BlogPostDetailClient({ post }: BlogPostDetailClientProps) {
       <motion.div variants={itemVariants} className="mb-8">
         <Button variant="outline" asChild>
           <Link href="/blog">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
+            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog (Legacy)
           </Link>
         </Button>
       </motion.div>

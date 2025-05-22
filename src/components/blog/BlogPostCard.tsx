@@ -4,14 +4,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { format } from 'date-fns';
-import type { BlogPost } from '@/types';
+import type { UpdatePost } from '@/types'; // Changed from BlogPost
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CalendarDays } from 'lucide-react';
 
 interface BlogPostCardProps {
-  post: BlogPost;
+  post: UpdatePost; // Changed from BlogPost
   index: number;
 }
 

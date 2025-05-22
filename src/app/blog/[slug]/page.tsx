@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { BLOG_POSTS, APP_NAME } from '@/lib/constants';
+import { UPDATE_POSTS, APP_NAME } from '@/lib/constants'; // Changed BLOG_POSTS to UPDATE_POSTS
 import { BlogPostDetailClient } from '@/components/blog/BlogPostDetailClient';
+import type { UpdatePost } from '@/types'; // Ensure this type is available if needed for post typing
 
 interface BlogPostPageProps {
   params: {
@@ -11,22 +12,22 @@ interface BlogPostPageProps {
 
 // This function can be used by Next.js to generate static pages at build time
 export async function generateStaticParams() {
-  return BLOG_POSTS.map((post) => ({
+  return UPDATE_POSTS.map((post: UpdatePost) => ({ // Changed BLOG_POSTS to UPDATE_POSTS and typed post
     slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = BLOG_POSTS.find(p => p.slug === params.slug);
+  const post = UPDATE_POSTS.find((p: UpdatePost) => p.slug === params.slug); // Changed BLOG_POSTS to UPDATE_POSTS and typed p
 
   if (!post) {
     return {
-      title: `Post Not Found | Blog | ${APP_NAME}`,
+      title: `Post Not Found | Blog (Legacy) | ${APP_NAME}`,
     };
   }
 
   return {
-    title: `${post.title} | Blog | ${APP_NAME}`,
+    title: `${post.title} | Blog (Legacy) | ${APP_NAME}`, // Marked as Legacy
     description: post.excerpt,
     openGraph: {
         title: post.title,
@@ -48,7 +49,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = BLOG_POSTS.find(p => p.slug === params.slug);
+  const post = UPDATE_POSTS.find((p: UpdatePost) => p.slug === params.slug); // Changed BLOG_POSTS to UPDATE_POSTS and typed p
 
   if (!post) {
     notFound();

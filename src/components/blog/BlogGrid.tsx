@@ -2,13 +2,13 @@
 
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import type { BlogPost } from '@/types';
+import type { UpdatePost } from '@/types'; // Changed from BlogPost
 import { BlogPostCard } from './BlogPostCard';
 import { Input } from '@/components/ui/input';
 import { Search, Rss } from 'lucide-react';
 
 interface BlogGridProps {
-  posts: BlogPost[];
+  posts: UpdatePost[]; // Changed from BlogPost
 }
 
 export function BlogGrid({ posts }: BlogGridProps) {
@@ -42,9 +42,9 @@ export function BlogGrid({ posts }: BlogGridProps) {
         <div className="flex justify-center mb-4">
             <Rss className="h-12 w-12 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold text-center mb-4">Blog</h1>
+        <h1 className="text-4xl font-bold text-center mb-4">Blog (Legacy)</h1>
         <p className="text-center text-lg text-muted-foreground max-w-2xl mx-auto">
-          Insights, tutorials, and thoughts on web development, design, and technology.
+          Insights, tutorials, and thoughts on web development, design, and technology. (This is a legacy page).
         </p>
       </motion.div>
 
