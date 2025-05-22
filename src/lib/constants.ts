@@ -225,6 +225,57 @@ export const UPDATE_POSTS: UpdatePost[] = [
     author: BRAND_NAME,
     tags: ['Graduation', 'Central Michigan University', 'Computer Science', 'Entrepreneurship', 'Education', 'College of Engineering', 'Fraternity'],
   },
+  {
+    id: '5',
+    slug: 'completed-google-ux-design-certification',
+    title: "Completed Google UX Design Professional Certificate",
+    date: '2025-05-06T10:00:00Z',
+    excerpt: "Successfully completed the Google UX Design Professional Certificate, gaining hands-on experience in user-centered design processes, from empathy to prototyping and testing.",
+    content: `
+      <p>I'm excited to share that I've successfully completed the Google UX Design Professional Certificate through Coursera. This program provided extensive hands-on experience with Google’s industry-recognized UX design process, which has been invaluable.</p>
+      <h2 class="text-2xl font-semibold mt-6 mb-3">Key Learnings and Experiences</h2>
+      <p>Throughout the certificate program, I delved deep into the core principles of user experience design. Here are some of the key areas I focused on:</p>
+      <ul class="list-disc list-inside space-y-2 mb-4">
+        <li><strong>Empathizing with Users:</strong> Learning to conduct user research and develop empathy maps to truly understand user needs, pain points, and motivations.</li>
+        <li><strong>Defining Core Design Problems:</strong> Developing problem statements and value propositions to ensure design efforts are focused and impactful.</li>
+        <li><strong>Developing User-Centered Solutions:</strong> Creating user flows, wireframes, and low-fidelity prototypes to ideate and iterate on design solutions.</li>
+        <li><strong>Prototyping and Usability Testing:</strong> Building interactive prototypes in tools like Figma and conducting usability tests to gather feedback and refine designs.</li>
+      </ul>
+      <h2 class="text-2xl font-semibold mt-6 mb-3">Applying UX Principles</h2>
+      <p>I’ve already begun applying these principles directly to my own design practices. This has resulted in more thoughtful, inclusive, and intuitive user experiences in my projects. Understanding the 'why' behind design decisions and grounding them in user research has significantly enhanced the quality and effectiveness of my work.</p>
+      <p>This certification reinforces my commitment to creating digital products that are not only functional but also delightful and accessible for all users.</p>
+    `,
+    coverImageUrl: 'https://placehold.co/600x400.png',
+    dataAiHint: 'UX design certificate',
+    author: BRAND_NAME,
+    tags: ['Professional Development', 'UX Design', 'Google Certification', 'Coursera', 'User Experience'],
+  },
+  {
+    id: '6',
+    slug: 'completed-vanderbilt-ai-agent-developer-certification',
+    title: "Completed Vanderbilt AI Agent Developer Certification",
+    date: '2025-05-20T10:00:00Z',
+    excerpt: "Proud to have completed Vanderbilt University's AI Agent Developer Certification, gaining expertise in building multi-agent systems and extending AI capabilities.",
+    content: `
+      <p>I'm proud to share that I've completed Vanderbilt University's AI Agent Developer Professional Certification! This program has equipped me with the skills to harness the power of AI agents and build sophisticated automated systems.</p>
+      <h2 class="text-2xl font-semibold mt-6 mb-3">Core Competencies Gained</h2>
+      <p>This certification focused on the practical application of AI agent development. Key skills I've developed include:</p>
+      <ul class="list-disc list-inside space-y-2 mb-4">
+        <li><strong>Building Multi-Agent Systems:</strong> Designing and implementing systems where multiple AI agents collaborate to solve complex problems.</li>
+        <li><strong>Task Delegation to Autonomous AI Workers:</strong> Creating AI workers that can autonomously perform tasks based on given objectives.</li>
+        <li><strong>Extending GPT-Based Assistants:</strong> Developing custom tools and functions that enhance the capabilities of large language models like GPT.</li>
+        <li><strong>Bridging APIs, Automation, and Intelligent Workflows:</strong> Integrating AI agents with external APIs and services to create seamless, intelligent automation.</li>
+        <li><strong>AI System Automation:</strong> Coding functions for AI to use, instructing them on program interaction, and parsing AI output to create fully automated AI-driven systems.</li>
+      </ul>
+      <h2 class="text-2xl font-semibold mt-6 mb-3">Future Applications and Prompt Engineering</h2>
+      <p>I am excited to apply this knowledge to my future work, developing innovative solutions that leverage AI for enhanced efficiency and problem-solving. This certification has solidified my understanding of how to create robust AI-powered applications.</p>
+      <p>Furthermore, this experience has underscored the importance of Prompt Engineering. If you are looking to grow as a professional in 2025, I strongly suggest familiarizing yourself with how to effectively communicate with and guide AI models to achieve desired outcomes. It's a critical skill in the evolving landscape of artificial intelligence.</p>
+    `,
+    coverImageUrl: 'https://placehold.co/600x400.png',
+    dataAiHint: 'AI agent certificate',
+    author: BRAND_NAME,
+    tags: ['Professional Development', 'AI', 'Agent Development', 'Vanderbilt University', 'Prompt Engineering', 'Automation'],
+  },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -278,8 +329,8 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch }, // Using GitBranch icon for Docker as requested
-  { name: 'AI', icon: Cpu }, // Added AI to toolset
+  { name: 'Docker', icon: GitBranch }, // Using GitBranch icon for Docker
+  { name: 'AI', icon: Cpu }, 
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
@@ -331,7 +382,7 @@ export const EDUCATION = [
 ];
 
 export const CERTIFICATIONS = [
-  {
+   {
     name: "Google UX Design",
     issuer: "Google Career Certificates",
     year: "2025"
@@ -373,5 +424,7 @@ export const CERTIFICATIONS = [
   }
 ];
 
+
+    
 
     
