@@ -7,11 +7,14 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardFooter, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { KEY_SKILLS, PROJECTS, BRAND_NAME } from '@/lib/constants';
-import { ArrowRight, Briefcase, UserCheck, FolderGit2, Eye, Github } from 'lucide-react';
+import { KEY_SKILLS, PROJECTS, UPDATE_POSTS, BRAND_NAME } from '@/lib/constants';
+import type { UpdatePost } from '@/types';
+import { ArrowRight, Briefcase, UserCheck, FolderGit2, Eye, Github, FileText, CalendarDays } from 'lucide-react';
+import { format } from 'date-fns';
 
 export function HeroSection() {
   const selectedProjects = PROJECTS.slice(0, 3); // Show first 3 projects
+  const selectedUpdates = UPDATE_POSTS.slice(0, 3); // Show first 3 updates
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -107,7 +110,7 @@ export function HeroSection() {
       <motion.div className="mt-24 lg:mt-32" variants={itemVariants}>
         <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {selectedProjects.map((project, index) => (
+          {selectedProjects.map((project) => (
             <motion.div key={project.id} variants={itemVariants} className="h-full">
               <Card className="flex flex-col h-full overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="relative w-full h-56">
@@ -170,6 +173,63 @@ export function HeroSection() {
           </Button>
         </div>
       </motion.div>
+
+      <motion.div className="mt-24 lg:mt-32" variants={itemVariants}>
+        <h2 className="text-3xl font-bold text-center mb-12">Featured Updates</h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {selectedUpdates.map((update: UpdatePost) => (
+            <motion.div key={update.id} variants={itemVariants} className="h-full">
+              <Card className="flex flex-col h-full overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="relative w-full h-56">
+                  <Image
+                    src={update.coverImageUrl}
+                    alt={update.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                    data-ai-hint={update.dataAiHint || 'update image'}
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-xl md:text-2xl">{update.title}</CardTitle>
+                  <div className="flex items-center text-xs text-muted-foreground pt-1">
+                    <CalendarDays className="mr-1.5 h-4 w-4" />
+                    {format(new Date(update.date), 'MMMM d, yyyy')}
+                  </div>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{update.excerpt}</p>
+                  {update.tags && update.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {update.tags.slice(0, 3).map((tag) => (
+                        <Badge key={tag} variant="secondary">{tag}</Badge>
+                      ))}
+                      {update.tags.length > 3 && (
+                         <Badge variant="secondary">+{update.tags.length - 3} more</Badge>
+                      )}
+                    </div>
+                  )}
+                </CardContent>
+                <CardFooter className="pt-4">
+                  <Button asChild variant="default" size="sm" className="w-full">
+                    <Link href={`/updates/${update.slug}`}>
+                      Read More <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Button asChild size="lg" variant="outline">
+            <Link href="/updates">
+              <FileText className="mr-2 h-5 w-5" /> See All Updates
+            </Link>
+          </Button>
+        </div>
+      </motion.div>
+
     </motion.section>
   );
 }
