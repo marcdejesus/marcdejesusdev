@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -7,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { KEY_SKILLS, PROJECTS, BRAND_NAME } from '@/lib/constants';
-import { ArrowRight, Briefcase, Lightbulb, UserCheck } from 'lucide-react';
+import { ArrowRight, Briefcase, Lightbulb, UserCheck, FolderGit2 } from 'lucide-react'; // Changed Lightbulb to FolderGit2 for relevance
 
 export function HeroSection() {
   const selectedProjects = PROJECTS.slice(0, 2); // Show first 2 projects
@@ -26,7 +27,7 @@ export function HeroSection() {
   };
 
   return (
-    <motion.section 
+    <motion.section
       className="container mx-auto px-4 py-16 md:py-24 lg:py-32"
       initial="hidden"
       animate="visible"
@@ -35,16 +36,18 @@ export function HeroSection() {
       <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
         <motion.div variants={itemVariants}>
           <Badge variant="outline" className="mb-4 text-sm py-1 px-3 border-primary text-primary">
-            <Lightbulb className="mr-2 h-4 w-4" />
-            Innovative Digital Solutions
+            <FolderGit2 className="mr-2 h-4 w-4" />
+            Portfolio Showcase
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Crafting Digital Experiences with <span className="text-primary">{BRAND_NAME}</span>
+            Welcome to my Portfolio!
           </h1>
-          <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Passionate about building beautiful, functional, and user-centric web and mobile applications. 
-            Explore my work and let&apos;s create something amazing together.
-          </p>
+          <blockquote className="mt-6 text-lg leading-8 text-muted-foreground border-l-4 border-primary pl-6 py-2 italic bg-muted/30 rounded-r-md">
+            &ldquo;This portfolio is a curated collection of my journey in software development and design,
+            showcasing the projects I&apos;m passionate about and the skills I&apos;ve honed.
+            It&apos;s a space where innovation meets execution. Explore my work and let&apos;s connect!&rdquo;
+            <footer className="mt-3 text-sm text-foreground not-italic font-medium">- {BRAND_NAME}</footer>
+          </blockquote>
           <div className="mt-10 flex items-center gap-x-6">
             <Button asChild size="lg">
               <Link href="/projects">
@@ -58,7 +61,7 @@ export function HeroSection() {
             </Button>
           </div>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="relative"
           variants={itemVariants}
         >
