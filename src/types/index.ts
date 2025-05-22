@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 
 export interface NavItem {
@@ -50,7 +51,7 @@ export interface Tool {
   dataAiHint?: string; // For logo image
 }
 
-export interface BlogPost {
+export interface UpdatePost { // Renamed from BlogPost
   id: string;
   slug: string;
   title: string;
