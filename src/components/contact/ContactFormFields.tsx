@@ -19,6 +19,7 @@ export const contactFormSchema = z.object({
   budgetRange: z.string().optional(),
   timeline: z.string().optional(),
   socialLink: z.string().url({ message: "Please enter a valid URL." }).optional().or(z.literal('')),
+  subscribeToMarketing: z.boolean().default(false).optional(),
 });
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;
@@ -31,4 +32,5 @@ export const defaultValues: Partial<ContactFormValues> = {
   budgetRange: CONTACT_FORM_OPTIONS.budgetRanges[0], // Default to N/A or first budget option
   timeline: CONTACT_FORM_OPTIONS.timelines[0], // Default to first timeline option
   socialLink: "",
+  subscribeToMarketing: false,
 };

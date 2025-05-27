@@ -11,7 +11,7 @@ import {
   FormDescription,
   FormField,
   FormItem,
-  FormLabel,
+  FormLabel, // Keep FormLabel for general form field labels
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -28,6 +28,8 @@ import { CONTACT_FORM_OPTIONS, SOCIAL_LINKS } from "@/lib/constants";
 import { contactFormSchema, type ContactFormValues, defaultValues } from "./ContactFormFields";
 import { Send } from "lucide-react";
 import Link from "next/link";
+import { Checkbox } from "@/components/ui/checkbox"; // Import Checkbox
+import { Label } from "@/components/ui/label"; // Import Label for direct use with checkbox
 
 export function ContactForm() {
   const form = useForm<ContactFormValues>({
@@ -37,7 +39,7 @@ export function ContactForm() {
   });
 
   async function onSubmit(data: ContactFormValues) {
-    console.log(data);
+    console.log(data); // This will now include subscribeToMarketing
     toast({
       title: "Message Sent!",
       description: "Thank you for reaching out. I'll get back to you as soon as possible.",
@@ -218,10 +220,39 @@ export function ContactForm() {
                 )}
               />
 
-              <Button type="submit" size="lg" disabled={form.formState.isSubmitting}>
-                {form.formState.isSubmitting ? "Sending..." : "Send Message"}
-                {!form.formState.isSubmitting && <Send className="ml-2 h-5 w-5" />}
-              </Button>
+              <div className="!mt-8 flex flex-col-reverse items-stretch gap-y-4 sm:flex-row sm:items-center sm:justify-end sm:gap-x-6">
+                <FormField
+                  control={form.control}
+                  name="subscribeToMarketing"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-row items-center space-x-2.5 space-y-0">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                          id="subscribeToMarketingChk"
+                          aria-describedby="subscribeToMarketingDesc"
+                        />
+                      </FormControl>
+                      <div className="grid gap-0.5 leading-none">
+                        <Label
+                          htmlFor="subscribeToMarketingChk"
+                          className="font-normal text-sm text-muted-foreground cursor-pointer hover:text-foreground transition-colors"
+                        >
+                          Subscribe to marketing emails
+                        </Label>
+                        <p id="subscribeToMarketingDesc" className="text-xs text-muted-foreground">
+                          You can unsubscribe at any time.
+                        </p>
+                      </div>
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit" size="lg" disabled={form.formState.isSubmitting} className="w-full sm:w-auto">
+                  {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+                  {!form.formState.isSubmitting && <Send className="ml-2 h-5 w-5" />}
+                </Button>
+              </div>
             </form>
           </Form>
         </motion.div>
