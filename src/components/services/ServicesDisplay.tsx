@@ -32,9 +32,6 @@ export function ServicesDisplay() {
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
           Tailored web solutions to elevate your small business. Explore our packages, popular upgrades, and ongoing support options designed for restaurants, barbershops, blue-collar services, and more.
         </p>
-        <p className="mt-2 text-sm text-muted-foreground max-w-3xl mx-auto">
-            All services are provided through <a href="https://dejesusdigitalsolutions.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{BRAND_NAME} Digital Solutions</a>.
-        </p>
       </motion.div>
 
       {/* Website Packages */}
@@ -120,7 +117,7 @@ export function ServicesDisplay() {
       </motion.div>
 
       {/* Subscription Service */}
-      <motion.div variants={itemVariants}>
+      <motion.div variants={itemVariants} className="mb-16"> {/* Adjusted margin */}
         <h2 className="text-3xl font-bold text-center mb-4 flex items-center justify-center">
           <LifeBuoy className="mr-3 h-8 w-8 text-primary" />
           {SUBSCRIPTION_SERVICE.title}
@@ -155,6 +152,20 @@ export function ServicesDisplay() {
             </Button>
           </CardFooter>
         </Card>
+      </motion.div>
+
+      <motion.div variants={itemVariants} className="text-center mt-12 mb-4">
+        <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
+          All services are provided through{' '}
+          <a 
+            href="https://dejesusdigitalsolutions.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-primary hover:underline font-medium"
+          >
+            De Jesus Digital Solutions
+          </a>.
+        </p>
       </motion.div>
 
     </motion.section>
