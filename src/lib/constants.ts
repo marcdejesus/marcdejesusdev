@@ -260,8 +260,8 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch }, // Using GitBranch icon for Docker as requested
-  { name: 'AI', icon: Cpu }, // Added AI
+  { name: 'Docker', icon: GitBranch },
+  { name: 'AI', icon: Cpu },
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
@@ -443,10 +443,10 @@ export const SERVICE_UPGRADES: ServiceUpgrade[] = [
      relatedPackages: ['starter-website'],
   },
   {
-    id: 'advanced-analytics',
-    title: 'Advanced Analytics & Reporting',
-    description: 'Gain deeper insights into your website traffic and user behavior with custom analytics dashboards and reports.',
-    icon: LayoutDashboard,
+    id: 'ai-integration',
+    title: 'AI Integration',
+    description: 'Enhance your website with AI-powered features like chatbots, content generation, or personalized user experiences.',
+    icon: Cpu,
     relatedPackages: ['business-pro-website', 'ecommerce-powerhouse'],
   },
   {
@@ -476,5 +476,3 @@ export const SUBSCRIPTION_SERVICE: SubscriptionService = {
   ctaLink: '/contact?service=maintenance-plan',
   ctaText: 'Secure Your Site'
 };
-
-    
