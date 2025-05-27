@@ -6,7 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { NAV_ITEMS, BRAND_NAME } from '@/lib/constants';
+import { NAV_ITEMS } from '@/lib/constants';
 import { Logo } from '@/components/shared/Logo';
 import { cn } from '@/lib/utils';
 
@@ -40,13 +40,15 @@ export function Header() {
     ))
   );
 
+  const headerBrandText = "Marc De Jesus | Software Engineer";
+
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full border-b transition-all duration-300",
       hasScrolled ? "bg-background/95 backdrop-blur-sm shadow-md" : "bg-background"
     )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Logo />
+        <Logo text={headerBrandText} />
         <nav className="hidden items-center space-x-6 md:flex">
           <NavLinks />
         </nav>
@@ -60,7 +62,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs bg-background p-6">
               <div className="mb-6 flex justify-between items-center">
-                <Logo textSize="text-xl" />
+                <Logo textSize="text-xl" text={headerBrandText} />
                 <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                   <X className="h-6 w-6" />
                   <span className="sr-only">Close menu</span>
