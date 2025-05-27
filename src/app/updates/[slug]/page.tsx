@@ -1,58 +1,78 @@
-
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { UPDATE_POSTS, APP_NAME } from '@/lib/constants'; // Renamed from BLOG_POSTS
-import { UpdateDetailClient } from '@/components/updates/UpdateDetailClient'; // Renamed from BlogPostDetailClient, path updated
+import { UPDATE_POSTS } from '@/lib/constants';
+import { UpdateDetailClient } from '@/components/updates/UpdateDetailClient';
+import { generateSEO, generateArticleSchema, SITE_CONFIG } from '@/lib/seo';
 
-interface UpdatePostPageProps { // Renamed from BlogPostPageProps
+interface UpdatePostPageProps {
   params: {
     slug: string;
   };
 }
 
 export async function generateStaticParams() {
-  return UPDATE_POSTS.map((post) => ({ // Using renamed constant
+  return UPDATE_POSTS.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export async function generateMetadata({ params }: UpdatePostPageProps): Promise<Metadata> { // Renamed props type
-  const post = UPDATE_POSTS.find(p => p.slug === params.slug); // Using renamed constant
+export async function generateMetadata({ params }: UpdatePostPageProps): Promise<Metadata> {
+  const post = UPDATE_POSTS.find(p => p.slug === params.slug);
 
   if (!post) {
-    return {
-      title: `Update Not Found | ${APP_NAME}`, // Changed from Post Not Found | Blog
-    };
+    return generateSEO({
+      title: 'Update Not Found',
+      description: 'The requested update could not be found.',
+      noindex: true,
+    });
   }
 
-  return {
-    title: `${post.title} | Updates | ${APP_NAME}`, // Changed from Blog
+  return generateSEO({
+    title: post.title,
     description: post.excerpt,
+    canonical: `${SITE_CONFIG.url}/updates/${post.slug}`,
+    keywords: [...(post.tags || []), 'update', 'blog', 'article'],
     openGraph: {
-        title: post.title,
-        description: post.excerpt,
-        type: 'article',
-        publishedTime: post.date,
-        authors: [post.author],
-        images: [
-            {
-                url: post.coverImageUrl,
-                width: 1200,
-                height: 630,
-                alt: post.title,
-            },
-        ],
-        tags: post.tags,
+      title: `${post.title} - Update by Marc De Jesus`,
+      description: post.excerpt,
+      type: 'article',
+      images: [
+        {
+          url: post.coverImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
-  };
+  });
 }
 
-export default function UpdatePostPage({ params }: UpdatePostPageProps) { // Renamed component and props type
-  const post = UPDATE_POSTS.find(p => p.slug === params.slug); // Using renamed constant
+export default function UpdatePostPage({ params }: UpdatePostPageProps) {
+  const post = UPDATE_POSTS.find(p => p.slug === params.slug);
 
   if (!post) {
     notFound();
   }
 
-  return <UpdateDetailClient post={post} />; // Using renamed component
+  const articleSchema = generateArticleSchema({
+    title: post.title,
+    description: post.excerpt,
+    image: post.coverImageUrl,
+    datePublished: post.date,
+    author: post.author,
+    tags: post.tags,
+  });
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema),
+        }}
+      />
+      <UpdateDetailClient post={post} />
+    </>
+  );
 }

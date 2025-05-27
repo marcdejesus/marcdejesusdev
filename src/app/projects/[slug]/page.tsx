@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { PROJECTS, APP_NAME } from '@/lib/constants';
+import { PROJECTS } from '@/lib/constants';
 import { ProjectDetailClient } from '@/components/projects/ProjectDetailClient';
+import { generateSEO, generateCreativeWorkSchema, SITE_CONFIG } from '@/lib/seo';
 
 interface ProjectPageProps {
   params: {
@@ -20,27 +21,32 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const project = PROJECTS.find(p => p.slug === params.slug);
 
   if (!project) {
-    return {
-      title: `Project Not Found | ${APP_NAME}`,
-    };
+    return generateSEO({
+      title: 'Project Not Found',
+      description: 'The requested project could not be found.',
+      noindex: true,
+    });
   }
 
-  return {
-    title: `${project.title} | Projects | ${APP_NAME}`,
+  return generateSEO({
+    title: project.title,
     description: project.shortDescription,
+    canonical: `${SITE_CONFIG.url}/projects/${project.slug}`,
+    keywords: [...project.technologies, 'project', 'portfolio', project.category.toLowerCase()],
     openGraph: {
-        title: project.title,
-        description: project.shortDescription,
-        images: [
-            {
-                url: project.coverImageUrl,
-                width: 1200,
-                height: 630,
-                alt: project.title,
-            },
-        ],
+      title: `${project.title} - Project by Marc De Jesus`,
+      description: project.shortDescription,
+      type: 'article',
+      images: [
+        {
+          url: project.coverImageUrl,
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
     },
-  };
+  });
 }
 
 export default function ProjectPage({ params }: ProjectPageProps) {
@@ -50,5 +56,24 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  return <ProjectDetailClient project={project} />;
+  const projectSchema = generateCreativeWorkSchema({
+    title: project.title,
+    description: project.shortDescription,
+    image: project.coverImageUrl,
+    url: project.liveDemoUrl,
+    technologies: project.technologies,
+    dateCreated: project.duration || undefined,
+  });
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(projectSchema),
+        }}
+      />
+      <ProjectDetailClient project={project} />
+    </>
+  );
 }
