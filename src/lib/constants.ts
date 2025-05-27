@@ -445,7 +445,7 @@ export const SERVICE_UPGRADES: ServiceUpgrade[] = [
   {
     id: 'ai-integration',
     title: 'AI Integration',
-    description: 'Enhance your website with AI-powered features like chatbots, content generation, or personalized user experiences.',
+    description: 'Enhance your website with AI-powered features like chatbots, content generation, personalized user experiences, AI agents, and task automation.',
     icon: Cpu,
     relatedPackages: ['business-pro-website', 'ecommerce-powerhouse'],
   },
@@ -476,3 +476,5 @@ export const SUBSCRIPTION_SERVICE: SubscriptionService = {
   ctaLink: '/contact?service=maintenance-plan',
   ctaText: 'Secure Your Site'
 };
+
+
