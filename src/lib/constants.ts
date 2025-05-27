@@ -1,6 +1,6 @@
 
 import type { Project, Skill, SocialLink, Tool, NavItem, ProjectCategory, UpdatePost, ServicePackage, ServiceUpgrade, SubscriptionService, ServiceFeature } from '@/types';
-import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe, DatabaseZap } from 'lucide-react'; // Added Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe, DatabaseZap
+import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe, DatabaseZap, FolderGit2 } from 'lucide-react'; // Added Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe, DatabaseZap, FolderGit2
 
 export const APP_NAME = "Marc De Jesus Portfolio";
 export const BRAND_NAME = "Marc De Jesus";
@@ -260,7 +260,7 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch },
+  { name: 'Docker', icon: GitBranch }, // Using GitBranch icon as requested
   { name: 'AI', icon: Cpu },
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
@@ -361,7 +361,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     id: 'starter-website',
     title: 'Starter Website Package',
     description: 'Perfect for new businesses or individuals needing a professional online presence quickly. Get a beautiful, responsive landing page or small informational site.',
-    priceInfo: 'Contact for Quote',
+    priceInfo: 'Starting at $750',
     icon: Globe,
     features: [
       { text: '1-3 Page Custom Design', icon: CheckCircle },
@@ -378,7 +378,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     id: 'business-pro-website',
     title: 'Business Pro Website',
     description: 'A comprehensive website solution for growing businesses. Includes more pages, advanced features, and content management capabilities.',
-    priceInfo: 'Contact for Quote',
+    priceInfo: 'Starting at $1,500',
     icon: Building,
     features: [
       { text: 'Up to 10 Custom Designed Pages', icon: CheckCircle },
@@ -395,7 +395,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     id: 'ecommerce-powerhouse',
     title: 'E-commerce Powerhouse',
     description: 'Launch your online store with a powerful and scalable e-commerce platform. Includes product listings, secure payments, and inventory management.',
-    priceInfo: 'Contact for Quote',
+    priceInfo: 'Starting at $2,500',
     icon: ShoppingCart,
     features: [
       { text: 'Full E-commerce Store Setup', icon: CheckCircle },
@@ -459,7 +459,7 @@ export const SUBSCRIPTION_SERVICE: SubscriptionService = {
   id: 'maintenance-plan',
   title: 'Website Maintenance & Support Plan',
   description: 'Keep your website running smoothly and securely with our ongoing maintenance and support subscription. Focus on your business, we’ll handle the tech.',
-  priceInfo: 'Monthly Subscription - Contact for Details',
+  priceInfo: 'Starting at $99/month',
   icon: Wrench,
   features: [
     { text: 'Regular Software Updates (WordPress, Plugins, etc.)', icon: CheckCircle },
