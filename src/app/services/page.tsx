@@ -1,7 +1,7 @@
 
 import type { Metadata } from 'next';
 import { ServicesDisplay } from '@/components/services/ServicesDisplay';
-import { APP_NAME } from '@/lib/constants';
+import { APP_NAME, BRAND_NAME } from '@/lib/constants'; // Added BRAND_NAME
 
 export const metadata: Metadata = {
   title: `Services | ${APP_NAME}`,
