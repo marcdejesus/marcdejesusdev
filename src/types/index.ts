@@ -77,6 +77,7 @@ export interface ServicePackage {
   title: string;
   description: string;
   priceInfo: string; // e.g., "Starting at $X" or "Contact for Quote"
+  originalPriceInfo?: string; // For showing original price during sales
   features: ServiceFeature[];
   icon?: LucideIcon;
   idealFor: string[]; // e.g., ["Restaurants", "Barbershops"]
@@ -97,8 +98,10 @@ export interface SubscriptionService {
   title: string;
   description: string;
   priceInfo: string;
+  originalPriceInfo?: string; // For showing original price during sales
   features: ServiceFeature[];
   icon?: LucideIcon;
   ctaLink: string;
   ctaText: string;
 }
+

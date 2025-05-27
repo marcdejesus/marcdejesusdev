@@ -71,6 +71,9 @@ export function ServicesDisplay() {
                 </CardContent>
                 <CardFooter className="p-6 border-t">
                   <div className="w-full">
+                    {pkg.originalPriceInfo && (
+                      <p className="text-sm text-muted-foreground line-through mb-1">{pkg.originalPriceInfo}</p>
+                    )}
                     <p className="text-lg font-semibold text-primary mb-3">{pkg.priceInfo}</p>
                     <Button asChild className="w-full" size="lg">
                       <Link href={pkg.ctaLink}>
@@ -117,7 +120,7 @@ export function ServicesDisplay() {
       </motion.div>
 
       {/* Subscription Service */}
-      <motion.div variants={itemVariants} className="mb-16"> {/* Adjusted margin */}
+      <motion.div variants={itemVariants} className="mb-16">
         <h2 className="text-3xl font-bold text-center mb-4 flex items-center justify-center">
           <LifeBuoy className="mr-3 h-8 w-8 text-primary" />
           {SUBSCRIPTION_SERVICE.title}
@@ -131,6 +134,9 @@ export function ServicesDisplay() {
               {SUBSCRIPTION_SERVICE.icon && <SUBSCRIPTION_SERVICE.icon className="h-10 w-10 mr-4" />}
               <CardTitle className="text-2xl">{SUBSCRIPTION_SERVICE.title}</CardTitle>
             </div>
+            {SUBSCRIPTION_SERVICE.originalPriceInfo && (
+                 <p className="text-sm text-primary-foreground/70 line-through">{SUBSCRIPTION_SERVICE.originalPriceInfo}</p>
+            )}
             <CardDescription className="text-primary-foreground/90 text-sm">{SUBSCRIPTION_SERVICE.priceInfo}</CardDescription>
           </CardHeader>
           <CardContent className="p-6">
@@ -157,10 +163,10 @@ export function ServicesDisplay() {
       <motion.div variants={itemVariants} className="text-center mt-12 mb-4">
         <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
           All services are provided through{' '}
-          <a 
-            href="https://dejesusdigitalsolutions.com" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://dejesusdigitalsolutions.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-primary hover:underline font-medium"
           >
             De Jesus Digital Solutions
@@ -171,3 +177,4 @@ export function ServicesDisplay() {
     </motion.section>
   );
 }
+

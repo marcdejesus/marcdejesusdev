@@ -361,7 +361,8 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     id: 'starter-website',
     title: 'Starter Website Package',
     description: 'Perfect for new businesses or individuals needing a professional online presence quickly. Get a beautiful, responsive landing page or small informational site.',
-    priceInfo: 'Starting at $750',
+    originalPriceInfo: 'Starting at $750',
+    priceInfo: 'Launch Sale: Starting at $375',
     icon: Globe,
     features: [
       { text: '1-3 Page Custom Design', icon: CheckCircle },
@@ -378,7 +379,8 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     id: 'business-pro-website',
     title: 'Business Pro Website',
     description: 'A comprehensive website solution for growing businesses. Includes more pages, advanced features, and content management capabilities.',
-    priceInfo: 'Starting at $1,500',
+    originalPriceInfo: 'Starting at $1,500',
+    priceInfo: 'Launch Sale: Starting at $750',
     icon: Building,
     features: [
       { text: 'Up to 10 Custom Designed Pages', icon: CheckCircle },
@@ -395,7 +397,8 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     id: 'ecommerce-powerhouse',
     title: 'E-commerce Powerhouse',
     description: 'Launch your online store with a powerful and scalable e-commerce platform. Includes product listings, secure payments, and inventory management.',
-    priceInfo: 'Starting at $2,500',
+    originalPriceInfo: 'Starting at $2,500',
+    priceInfo: 'Launch Sale: Starting at $1,250',
     icon: ShoppingCart,
     features: [
       { text: 'Full E-commerce Store Setup', icon: CheckCircle },
@@ -459,7 +462,8 @@ export const SUBSCRIPTION_SERVICE: SubscriptionService = {
   id: 'maintenance-plan',
   title: 'Website Maintenance & Support Plan',
   description: 'Keep your website running smoothly and securely with our ongoing maintenance and support subscription. Focus on your business, we’ll handle the tech.',
-  priceInfo: 'Starting at $99/month',
+  originalPriceInfo: 'Starting at $99/month',
+  priceInfo: 'Launch Sale: Starting at $49/month',
   icon: Wrench,
   features: [
     { text: 'Regular Software Updates (WordPress, Plugins, etc.)', icon: CheckCircle },
@@ -472,3 +476,4 @@ export const SUBSCRIPTION_SERVICE: SubscriptionService = {
   ctaLink: '/contact?service=maintenance-plan',
   ctaText: 'Secure Your Site'
 };
+
