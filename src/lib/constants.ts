@@ -1,6 +1,6 @@
 
 import type { Project, Skill, SocialLink, Tool, NavItem, ProjectCategory, UpdatePost, ServicePackage, ServiceUpgrade, SubscriptionService, ServiceFeature } from '@/types';
-import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe } from 'lucide-react'; // Added Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe
+import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe, DatabaseZap } from 'lucide-react'; // Added Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe, DatabaseZap
 
 export const APP_NAME = "Marc De Jesus Portfolio";
 export const BRAND_NAME = "Marc De Jesus";
@@ -445,6 +445,13 @@ export const SERVICE_UPGRADES: ServiceUpgrade[] = [
     description: 'Gain deeper insights into your website traffic and user behavior with custom analytics dashboards and reports.',
     icon: LayoutDashboard,
     relatedPackages: ['business-pro-website', 'ecommerce-powerhouse'],
+  },
+  {
+    id: 'data-scraping-lead-gen',
+    title: 'Data Scraping & Lead Generation',
+    description: 'Automated data scraping using Python to gather targeted leads for your business. Leads can be exported in various formats (CSV, Excel, JSON).',
+    icon: DatabaseZap,
+    relatedPackages: ['business-pro-website'],
   }
 ];
 
