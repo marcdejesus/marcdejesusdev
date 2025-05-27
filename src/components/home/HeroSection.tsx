@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardFooter, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { KEY_SKILLS, PROJECTS, UPDATE_POSTS, BRAND_NAME } from '@/lib/constants';
 import type { UpdatePost } from '@/types';
-import { ArrowRight, Briefcase, FolderGit2, Eye, Github, FileText, CalendarDays, Youtube } from 'lucide-react'; // Added Youtube
+import { ArrowRight, Briefcase, FolderGit2, Eye, Github, FileText, CalendarDays, Youtube } from 'lucide-react';
 import { format } from 'date-fns';
 
 export function HeroSection() {
@@ -46,9 +46,7 @@ export function HeroSection() {
             Welcome to my Portfolio!
           </h1>
           <blockquote className="mt-6 text-lg leading-8 text-muted-foreground border-l-4 border-primary pl-6 py-2 italic bg-muted/30 rounded-r-md">
-            &ldquo;This portfolio is a curated collection of my journey in software development and design,
-            showcasing the projects I&apos;m passionate about and the skills I&apos;ve honed.
-            It&apos;s a space where innovation meets execution. Explore my work and let&apos;s connect!&rdquo;
+            &ldquo;This portfolio showcases my software development projects and design work. It&apos;s a glimpse into what I love to create. Explore my work, and let&apos;s connect!&rdquo;
             <footer className="mt-3 text-sm text-foreground not-italic font-medium">- {BRAND_NAME}</footer>
           </blockquote>
           <div className="mt-10 flex items-center gap-x-6">
@@ -77,8 +75,8 @@ export function HeroSection() {
             className="rounded-xl shadow-2xl"
             data-ai-hint="abstract technology design"
           />
-           <Badge 
-            variant="secondary" 
+           <Badge
+            variant="secondary"
             className="absolute -bottom-6 -right-6 hidden lg:block py-2 px-4 text-sm shadow-lg border border-primary/30"
           >
             Professional Software Engineer
@@ -114,7 +112,7 @@ export function HeroSection() {
         <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {selectedProjects.map((project) => {
-            const isYoutubeLink = project.liveDemoUrl && 
+            const isYoutubeLink = project.liveDemoUrl &&
                                   (project.liveDemoUrl.includes('youtube.com') || project.liveDemoUrl.includes('youtu.be'));
             return (
               <motion.div key={project.id} variants={itemVariants} className="h-full">
