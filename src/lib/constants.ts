@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
     longDescription: 'This Gamified AI Learning Application is a prototype developed as a Senior Design Capstone project at Central Michigan University. It leverages React Native for the front-end, a Node.js backend, MongoDB for data storage, and the OpenAI API for its core AI functionalities. The application aims to make learning more engaging through features like AI-assisted learning, personalized AI-generated courses, educational minigames, progress tracking, quizzes, and social components like leaderboards. This project explores the intersection of gamification, artificial intelligence, and mobile education. This is a closed-source project.',
     coverImageUrl: '/tymelyne.png',
     dataAiHint: 'ai learning app',
-    technologies: ['React Native', 'MongoDB', 'OpenAI API', 'Node.js', 'AI/ML', 'Gamification'],
+    technologies: ['React Native', 'MongoDB', 'OpenAI API', 'Node.js', 'AI/ML', 'Gamification', 'Social Features', 'Progress Tracking', 'Quizzes'],
     liveDemoUrl: 'https://www.youtube.com/watch?v=placeholder_video_id', // Placeholder YouTube link
     // githubUrl is intentionally omitted as it's closed-source
     client: 'Senior Design Capstone Project (Central Michigan University)',
@@ -106,6 +106,21 @@ export const PROJECTS: Project[] = [
     // No GitHub URL as it's primarily an SEO/marketing site
     role: 'Developer',
     duration: 'Client Project'
+  },
+  {
+    id: '10',
+    slug: 'retro-type-wave',
+    title: 'Retro Type Wave',
+    category: 'Web Development',
+    shortDescription: 'A retrowave themed typing trainer where users improve typing speed while evading police, featuring leaderboards, saved progress, and a music player.',
+    longDescription: 'Immerse yourself in the neon-drenched world of Retro Type Wave, a unique typing trainer with a thrilling retrowave aesthetic. Sharpen your typing skills by accurately typing words and phrases to outrun a relentless police chase. The game features competitive leaderboards to track your high scores, progress saved locally via cookies, an integrated music player with retrowave tracks, and is optimized for search engines with Google AdSense integration for monetization. Can you type fast enough to escape?',
+    coverImageUrl: 'https://placehold.co/600x400.png',
+    dataAiHint: 'retrowave typing game',
+    technologies: ['React', 'JavaScript', 'HTML5', 'CSS3', 'SEO', 'Google AdSense', 'Cookies', 'Leaderboards', 'Music Player'],
+    // liveDemoUrl: 'your-live-demo-link-here', // Add if available
+    // githubUrl: 'your-github-link-here', // Add if available
+    role: 'Full-Stack Developer',
+    duration: 'Personal Project'
   }
 ];
 
@@ -190,7 +205,8 @@ export const UPDATE_POSTS: UpdatePost[] = [
     author: BRAND_NAME,
     tags: ['Professional Development', 'UX Design', 'Google Certification', 'Coursera', 'User Experience'],
   },
-];
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { name: 'GitHub', url: 'https://github.com/marcdejesus', icon: Github },
@@ -243,8 +259,8 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch }, // Using GitBranch icon for Docker
-  { name: 'AI', icon: Cpu }, 
+  { name: 'Docker', icon: GitBranch },
+  { name: 'AI', icon: Cpu },
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
@@ -296,7 +312,7 @@ export const EDUCATION = [
 ];
 
 export const CERTIFICATIONS = [
-   {
+  {
     name: "Google UX Design",
     issuer: "Google Career Certificates",
     year: "2025"
