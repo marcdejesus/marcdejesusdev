@@ -226,7 +226,7 @@ export function ServicesDisplay() {
         </Button>
       </motion.div>
 
-      <motion.div variants={itemVariants} className="text-center mt-12 mb-4 pt-8">
+      <motion.div variants={itemVariants} className="text-center mt-8 mb-2 pt-4"> {/* Reduced mt, mb, and pt values */}
         <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
           All services are provided through{' '}
           <a
@@ -243,7 +243,3 @@ export function ServicesDisplay() {
     </motion.section>
   );
 }
-
-    
-
-    
