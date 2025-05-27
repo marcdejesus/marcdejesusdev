@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardFooter, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { KEY_SKILLS, PROJECTS, UPDATE_POSTS, BRAND_NAME } from '@/lib/constants';
 import type { UpdatePost } from '@/types';
-import { ArrowRight, Briefcase, UserCheck, FolderGit2, Eye, Github, FileText, CalendarDays, Youtube } from 'lucide-react'; // Added Youtube
+import { ArrowRight, Briefcase, FolderGit2, Eye, Github, FileText, CalendarDays, Youtube } from 'lucide-react'; // Added Youtube
 import { format } from 'date-fns';
 
 export function HeroSection() {
@@ -77,9 +77,12 @@ export function HeroSection() {
             className="rounded-xl shadow-2xl"
             data-ai-hint="abstract technology design"
           />
-           <div className="absolute -bottom-8 -right-8 hidden lg:block bg-primary/10 p-4 rounded-lg shadow-lg backdrop-blur-sm">
-            <UserCheck className="h-12 w-12 text-primary" />
-          </div>
+           <Badge 
+            variant="secondary" 
+            className="absolute -bottom-6 -right-6 hidden lg:block py-2 px-4 text-sm shadow-lg border border-primary/30"
+          >
+            Professional Software Engineer
+          </Badge>
         </motion.div>
       </div>
 
