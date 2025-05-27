@@ -29,12 +29,12 @@ export function AboutContent() {
     >
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
         <motion.div variants={itemVariants} className="lg:col-span-1 space-y-8">
-          <div className="relative w-full aspect-square rounded-full overflow-hidden shadow-xl mx-auto max-w-xs lg:max-w-none">
+          <div className="relative w-full aspect-square rounded-full overflow-hidden shadow-xl mx-auto max-w-[160px] lg:max-w-[200px]">
             <Image
               src="/headshot.jpg"
               alt="Marc De Jesus - Headshot"
-              width={400}
-              height={400}
+              width={200}
+              height={200}
               className="object-cover"
               data-ai-hint="professional portrait"
               priority
