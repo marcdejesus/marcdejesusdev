@@ -1,6 +1,6 @@
 
-import type { Project, Skill, SocialLink, Tool, NavItem, ProjectCategory, UpdatePost } from '@/types';
-import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck, Eye, Youtube } from 'lucide-react'; // Added Triangle, ShieldCheck, Eye, Youtube
+import type { Project, Skill, SocialLink, Tool, NavItem, ProjectCategory, UpdatePost, ServicePackage, ServiceUpgrade, SubscriptionService, ServiceFeature } from '@/types';
+import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe } from 'lucide-react'; // Added Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe
 
 export const APP_NAME = "Marc De Jesus Portfolio";
 export const BRAND_NAME = "Marc De Jesus";
@@ -9,6 +9,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Projects', href: '/projects' },
   { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services'},
   { label: 'Updates', href: '/updates' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -312,7 +313,7 @@ export const EDUCATION = [
 ];
 
 export const CERTIFICATIONS = [
-  {
+   {
     name: "Google UX Design",
     issuer: "Google Career Certificates",
     year: "2025"
@@ -353,3 +354,114 @@ export const CERTIFICATIONS = [
     year: "In Progress"
   }
 ];
+
+// SERVICES SECTION DATA
+export const SERVICE_PACKAGES: ServicePackage[] = [
+  {
+    id: 'starter-website',
+    title: 'Starter Website Package',
+    description: 'Perfect for new businesses or individuals needing a professional online presence quickly. Get a beautiful, responsive landing page or small informational site.',
+    priceInfo: 'Contact for Quote',
+    icon: Globe,
+    features: [
+      { text: '1-3 Page Custom Design', icon: CheckCircle },
+      { text: 'Mobile-Responsive Layout', icon: CheckCircle },
+      { text: 'Basic SEO Setup', icon: CheckCircle },
+      { text: 'Contact Form Integration', icon: CheckCircle },
+      { text: 'Social Media Links', icon: CheckCircle },
+    ],
+    idealFor: ['Startups', 'Freelancers', 'Local Businesses'],
+    ctaLink: '/contact?service=starter-website',
+    ctaText: 'Get Started'
+  },
+  {
+    id: 'business-pro-website',
+    title: 'Business Pro Website',
+    description: 'A comprehensive website solution for growing businesses. Includes more pages, advanced features, and content management capabilities.',
+    priceInfo: 'Contact for Quote',
+    icon: Building,
+    features: [
+      { text: 'Up to 10 Custom Designed Pages', icon: CheckCircle },
+      { text: 'Content Management System (CMS)', icon: CheckCircle },
+      { text: 'Advanced SEO Optimization', icon: CheckCircle },
+      { text: 'Blog Setup & Integration', icon: CheckCircle },
+      { text: 'Google Analytics Setup', icon: CheckCircle },
+    ],
+    idealFor: ['Small to Medium Businesses', 'Service Providers', 'Restaurants'],
+    ctaLink: '/contact?service=business-pro',
+    ctaText: 'Inquire Now'
+  },
+  {
+    id: 'ecommerce-powerhouse',
+    title: 'E-commerce Powerhouse',
+    description: 'Launch your online store with a powerful and scalable e-commerce platform. Includes product listings, secure payments, and inventory management.',
+    priceInfo: 'Contact for Quote',
+    icon: ShoppingCart,
+    features: [
+      { text: 'Full E-commerce Store Setup', icon: CheckCircle },
+      { text: 'Secure Payment Gateway Integration', icon: CheckCircle },
+      { text: 'Product Catalog & Management', icon: CheckCircle },
+      { text: 'Shopping Cart & Checkout System', icon: CheckCircle },
+      { text: 'Basic Inventory Tracking', icon: CheckCircle },
+    ],
+    idealFor: ['Online Retailers', 'Boutiques', 'Product-based Businesses'],
+    ctaLink: '/contact?service=ecommerce',
+    ctaText: 'Build Your Store'
+  },
+];
+
+export const SERVICE_UPGRADES: ServiceUpgrade[] = [
+  {
+    id: 'booking-system',
+    title: 'Online Booking System',
+    description: 'Allow customers to book appointments, services, or reservations directly on your website. Ideal for barbershops, salons, restaurants, and consultants.',
+    icon: CalendarCheck,
+    relatedPackages: ['starter-website', 'business-pro-website'],
+  },
+  {
+    id: 'local-seo-boost',
+    title: 'Local SEO Boost',
+    description: 'Improve your visibility in local search results (Google Maps, local listings) to attract more nearby customers.',
+    icon: Search,
+    relatedPackages: ['starter-website', 'business-pro-website'],
+  },
+  {
+    id: 'menu-service-catalog',
+    title: 'Online Menu / Service Catalog',
+    description: 'Display your restaurant menu or list of services in an attractive, easy-to-navigate online format.',
+    icon: FileText,
+    relatedPackages: ['starter-website', 'business-pro-website'],
+  },
+   {
+    id: 'cms-integration',
+    title: 'Content Management System (CMS)',
+    description: 'Easily update your website content (text, images, blog posts) without needing technical skills.',
+    icon: Settings,
+     relatedPackages: ['starter-website'],
+  },
+  {
+    id: 'advanced-analytics',
+    title: 'Advanced Analytics & Reporting',
+    description: 'Gain deeper insights into your website traffic and user behavior with custom analytics dashboards and reports.',
+    icon: LayoutDashboard,
+    relatedPackages: ['business-pro-website', 'ecommerce-powerhouse'],
+  }
+];
+
+export const SUBSCRIPTION_SERVICE: SubscriptionService = {
+  id: 'maintenance-plan',
+  title: 'Website Maintenance & Support Plan',
+  description: 'Keep your website running smoothly and securely with our ongoing maintenance and support subscription. Focus on your business, we’ll handle the tech.',
+  priceInfo: 'Monthly Subscription - Contact for Details',
+  icon: Wrench,
+  features: [
+    { text: 'Regular Software Updates (WordPress, Plugins, etc.)', icon: CheckCircle },
+    { text: 'Security Monitoring & Malware Scans', icon: CheckCircle },
+    { text: 'Priority Bug Fix Support', icon: CheckCircle },
+    { text: 'Performance Optimization Checks', icon: CheckCircle },
+    { text: 'Content Update Assistance (e.g. up to 1hr/month)', icon: CheckCircle },
+    { text: '20% Discount on Future Website Upgrades & New Features', icon: CheckCircle },
+  ],
+  ctaLink: '/contact?service=maintenance-plan',
+  ctaText: 'Secure Your Site'
+};
