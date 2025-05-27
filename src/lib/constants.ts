@@ -155,6 +155,31 @@ export const UPDATE_POSTS: UpdatePost[] = [
     tags: ['Professional Development', 'AI', 'Agent Development', 'Vanderbilt University', 'Prompt Engineering', 'Automation'],
   },
   {
+    id: '5',
+    slug: 'completed-google-ux-design-certification',
+    title: "Completed Google UX Design Professional Certificate",
+    date: '2025-05-06T10:00:00Z',
+    excerpt: "Successfully completed the Google UX Design Professional Certificate, gaining hands-on experience in user-centered design processes, from empathy to prototyping and testing.",
+    content: `
+      <p>I'm excited to share that I've successfully completed the Google UX Design Professional Certificate through Coursera. This program provided extensive hands-on experience with Google’s industry-recognized UX design process, which has been invaluable.</p>
+      <h2 class="text-2xl font-semibold mt-6 mb-3">Key Learnings and Experiences</h2>
+      <p>Throughout the certificate program, I delved deep into the core principles of user experience design. Here are some of the key areas I focused on:</p>
+      <ul class="list-disc list-inside space-y-2 mb-4">
+        <li><strong>Empathizing with Users:</strong> Learning to conduct user research and develop empathy maps to truly understand user needs, pain points, and motivations.</li>
+        <li><strong>Defining Core Design Problems:</strong> Developing problem statements and value propositions to ensure design efforts are focused and impactful.</li>
+        <li><strong>Developing User-Centered Solutions:</strong> Creating user flows, wireframes, and low-fidelity prototypes to ideate and iterate on design solutions.</li>
+        <li><strong>Prototyping and Usability Testing:</strong> Building interactive prototypes in tools like Figma and conducting usability tests to gather feedback and refine designs.</li>
+      </ul>
+      <h2 class="text-2xl font-semibold mt-6 mb-3">Applying UX Principles</h2>
+      <p>I’ve already begun applying these principles directly to my own design practices. This has resulted in more thoughtful, inclusive, and intuitive user experiences in my projects. Understanding the 'why' behind design decisions and grounding them in user research has significantly enhanced the quality and effectiveness of my work.</p>
+      <p>This certification reinforces my commitment to creating digital products that are not only functional but also delightful and accessible for all users.</p>
+    `,
+    coverImageUrl: '/googleux.jpg',
+    dataAiHint: 'UX design certificate',
+    author: BRAND_NAME,
+    tags: ['Professional Development', 'UX Design', 'Google Certification', 'Coursera', 'User Experience'],
+  },
+  {
     id: '4',
     slug: 'graduated-central-michigan-university',
     title: "Graduated from Central Michigan University: A Journey Through CS and Entrepreneurship",
@@ -180,31 +205,6 @@ export const UPDATE_POSTS: UpdatePost[] = [
     dataAiHint: 'graduation cap university',
     author: BRAND_NAME,
     tags: ['Graduation', 'Central Michigan University', 'Computer Science', 'Entrepreneurship', 'Education', 'College of Engineering', 'Fraternity'],
-  },
-  {
-    id: '5',
-    slug: 'completed-google-ux-design-certification',
-    title: "Completed Google UX Design Professional Certificate",
-    date: '2025-05-06T10:00:00Z',
-    excerpt: "Successfully completed the Google UX Design Professional Certificate, gaining hands-on experience in user-centered design processes, from empathy to prototyping and testing.",
-    content: `
-      <p>I'm excited to share that I've successfully completed the Google UX Design Professional Certificate through Coursera. This program provided extensive hands-on experience with Google’s industry-recognized UX design process, which has been invaluable.</p>
-      <h2 class="text-2xl font-semibold mt-6 mb-3">Key Learnings and Experiences</h2>
-      <p>Throughout the certificate program, I delved deep into the core principles of user experience design. Here are some of the key areas I focused on:</p>
-      <ul class="list-disc list-inside space-y-2 mb-4">
-        <li><strong>Empathizing with Users:</strong> Learning to conduct user research and develop empathy maps to truly understand user needs, pain points, and motivations.</li>
-        <li><strong>Defining Core Design Problems:</strong> Developing problem statements and value propositions to ensure design efforts are focused and impactful.</li>
-        <li><strong>Developing User-Centered Solutions:</strong> Creating user flows, wireframes, and low-fidelity prototypes to ideate and iterate on design solutions.</li>
-        <li><strong>Prototyping and Usability Testing:</strong> Building interactive prototypes in tools like Figma and conducting usability tests to gather feedback and refine designs.</li>
-      </ul>
-      <h2 class="text-2xl font-semibold mt-6 mb-3">Applying UX Principles</h2>
-      <p>I’ve already begun applying these principles directly to my own design practices. This has resulted in more thoughtful, inclusive, and intuitive user experiences in my projects. Understanding the 'why' behind design decisions and grounding them in user research has significantly enhanced the quality and effectiveness of my work.</p>
-      <p>This certification reinforces my commitment to creating digital products that are not only functional but also delightful and accessible for all users.</p>
-    `,
-    coverImageUrl: '/googleux.jpg',
-    dataAiHint: 'UX design certificate',
-    author: BRAND_NAME,
-    tags: ['Professional Development', 'UX Design', 'Google Certification', 'Coursera', 'User Experience'],
   },
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
@@ -260,7 +260,7 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch }, // Using GitBranch icon as requested
+  { name: 'Docker', icon: GitBranch },
   { name: 'AI', icon: Cpu },
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
