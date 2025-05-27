@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
     coverImageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'retrowave typing game',
     technologies: ['React', 'JavaScript', 'HTML5', 'CSS3', 'SEO', 'Google AdSense', 'Cookies', 'Leaderboards', 'Music Player'],
-    // liveDemoUrl: 'your-live-demo-link-here', // Add if available
+    liveDemoUrl: 'https://retrotypewave.com',
     // githubUrl: 'your-github-link-here', // Add if available
     role: 'Full-Stack Developer',
     duration: 'Personal Project'
