@@ -7,7 +7,7 @@ import { SERVICE_PACKAGES, MOBILE_APP_PACKAGES, SERVICE_UPGRADES, SUBSCRIPTION_S
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Package, ArrowUpCircle, LifeBuoy, ArrowRight, Smartphone, AppWindow } from 'lucide-react';
+import { CheckCircle, Package, ArrowUpCircle, LifeBuoy, ArrowRight, Smartphone, AppWindow, MessageSquare } from 'lucide-react';
 
 export function ServicesDisplay() {
   const containerVariants = {
@@ -243,5 +243,7 @@ export function ServicesDisplay() {
     </motion.section>
   );
 }
+
+    
 
     
