@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { CodeXml } from 'lucide-react'; // Using CodeXml as a generic tech logo
+import { CodeXml } from 'lucide-react';
 import { BRAND_NAME } from '@/lib/constants';
 
 interface LogoProps {
