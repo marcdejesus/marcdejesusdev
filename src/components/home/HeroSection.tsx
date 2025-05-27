@@ -43,10 +43,10 @@ export function HeroSection() {
             Portfolio Showcase
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Welcome to my Portfolio!
+            Freelance Software Engineer
           </h1>
           <blockquote className="mt-6 text-lg leading-8 text-muted-foreground border-l-4 border-primary pl-6 py-2 italic bg-muted/30 rounded-r-md">
-            &ldquo;This portfolio showcases my software development projects and design work. It&apos;s a glimpse into what I love to create. Explore my work, and let&apos;s connect!&rdquo;
+            &ldquo;Your vision, expertly crafted. I'm committed to delivering high-quality software solutions with a 100% customer satisfaction guarantee. Let's build something exceptional together.&rdquo;
             <footer className="mt-3 text-sm text-foreground not-italic font-medium">- {BRAND_NAME}</footer>
           </blockquote>
           <div className="mt-10 flex items-center gap-x-6">
