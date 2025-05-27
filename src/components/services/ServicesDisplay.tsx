@@ -30,7 +30,7 @@ export function ServicesDisplay() {
       <motion.div variants={itemVariants} className="text-center mb-16">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Our Services</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-          Tailored web solutions to elevate your small business. Explore our packages, popular upgrades, and ongoing support options designed for restaurants, barbershops, blue-collar services, and more.
+          Tailored web solutions to elevate your small business. Explore our packages, popular upgrades, and ongoing support options designed for scaling your business.
         </p>
       </motion.div>
 
