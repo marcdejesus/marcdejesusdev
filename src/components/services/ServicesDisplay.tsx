@@ -3,11 +3,11 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { SERVICE_PACKAGES, SERVICE_UPGRADES, SUBSCRIPTION_SERVICE, BRAND_NAME } from '@/lib/constants';
+import { SERVICE_PACKAGES, MOBILE_APP_PACKAGES, SERVICE_UPGRADES, SUBSCRIPTION_SERVICE, BRAND_NAME } from '@/lib/constants';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Package, ArrowUpCircle, LifeBuoy, ArrowRight } from 'lucide-react';
+import { CheckCircle, Package, ArrowUpCircle, LifeBuoy, ArrowRight, Smartphone, AppWindow } from 'lucide-react';
 
 export function ServicesDisplay() {
   const containerVariants = {
@@ -30,7 +30,7 @@ export function ServicesDisplay() {
       <motion.div variants={itemVariants} className="text-center mb-16">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Our Services</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-          Tailored web solutions to elevate your small business. Explore our packages, popular upgrades, and ongoing support options designed for scaling your business.
+          Tailored web and mobile solutions to elevate your small business. Explore our packages, popular upgrades, and ongoing support options designed for scaling your business.
         </p>
       </motion.div>
 
@@ -41,10 +41,64 @@ export function ServicesDisplay() {
           Website Packages
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Choose a foundational package that fits your business needs. Each package can be further customized with upgrades.
+          Choose a foundational website package that fits your business needs. Each package can be further customized with upgrades.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {SERVICE_PACKAGES.map((pkg) => (
+            <motion.div key={pkg.id} variants={itemVariants} className="h-full">
+              <Card className="flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl overflow-hidden">
+                <CardHeader className="bg-muted/30 p-6">
+                  <div className="flex items-center mb-3">
+                    {pkg.icon && <pkg.icon className="h-10 w-10 text-primary mr-4" />}
+                    <CardTitle className="text-2xl">{pkg.title}</CardTitle>
+                  </div>
+                  <CardDescription className="text-sm min-h-[60px]">{pkg.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="p-6 flex-grow">
+                  <p className="text-sm font-semibold mb-1">Ideal for:</p>
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {pkg.idealFor.map(ideal => <Badge key={ideal} variant="secondary">{ideal}</Badge>)}
+                  </div>
+                  <h4 className="font-semibold mb-2 text-md">Key Features:</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {pkg.features.map((feature, index) => (
+                      <li key={index} className="flex items-start">
+                        {feature.icon ? <feature.icon className="h-4 w-4 text-green-500 mr-2 mt-0.5 shrink-0" /> : <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 shrink-0" />}
+                        <span>{feature.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter className="p-6 border-t">
+                  <div className="w-full">
+                    {pkg.originalPriceInfo && (
+                      <p className="text-sm text-muted-foreground line-through mb-1">{pkg.originalPriceInfo}</p>
+                    )}
+                    <p className="text-lg font-semibold text-primary mb-3">{pkg.priceInfo}</p>
+                    <Button asChild className="w-full" size="lg">
+                      <Link href={pkg.ctaLink}>
+                        {pkg.ctaText} <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
+                    </Button>
+                  </div>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Mobile App Packages */}
+      <motion.div variants={itemVariants} className="mb-20">
+        <h2 className="text-3xl font-bold text-center mb-4 flex items-center justify-center">
+          <AppWindow className="mr-3 h-8 w-8 text-primary" /> {/* Changed icon */}
+          Mobile App Packages
+        </h2>
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Launch your mobile presence with our tailored app development packages for iOS and Android.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch"> {/* Adjusted lg:grid-cols-3 to md:grid-cols-2 for 2 packages */}
+          {MOBILE_APP_PACKAGES.map((pkg) => (
             <motion.div key={pkg.id} variants={itemVariants} className="h-full">
               <Card className="flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl overflow-hidden">
                 <CardHeader className="bg-muted/30 p-6">
@@ -95,7 +149,7 @@ export function ServicesDisplay() {
           Popular Upgrades
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Enhance your website package with these powerful add-ons to meet specific business goals.
+          Enhance your website or mobile app package with these powerful add-ons to meet specific business goals.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICE_UPGRADES.map((upgrade) => (
@@ -160,7 +214,19 @@ export function ServicesDisplay() {
         </Card>
       </motion.div>
 
-      <motion.div variants={itemVariants} className="text-center mt-12 mb-4">
+      <motion.div variants={itemVariants} className="text-center mt-16 pt-8 border-t">
+        <h3 className="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
+        <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+          Contact me today for a free consultation to discuss your specific needs and how I can help bring your vision to life.
+        </p>
+        <Button asChild size="lg">
+          <Link href="/contact">
+            <MessageSquare className="mr-2 h-5 w-5" /> Get a Free Quote
+          </Link>
+        </Button>
+      </motion.div>
+
+      <motion.div variants={itemVariants} className="text-center mt-12 mb-4 pt-8">
         <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
           All services are provided through{' '}
           <a
@@ -178,3 +244,4 @@ export function ServicesDisplay() {
   );
 }
 
+    

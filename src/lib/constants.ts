@@ -1,6 +1,6 @@
 
 import type { Project, Skill, SocialLink, Tool, NavItem, ProjectCategory, UpdatePost, ServicePackage, ServiceUpgrade, SubscriptionService, ServiceFeature } from '@/types';
-import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe, DatabaseZap, FolderGit2 } from 'lucide-react'; // Added Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe, DatabaseZap, FolderGit2
+import { Github, Linkedin, X as XIcon, Instagram, Code, Database, LayoutDashboard, Smartphone, Search, GitBranch, Figma, Briefcase, Home, User, Mail, FileText, MessageSquare, Newspaper, Server, Zap, KeyRound, CreditCard, Bolt, Layers, Cpu, Cloud, Users, PenTool, GraduationCap, Award, Settings, Brain, Triangle, ShieldCheck, Eye, Youtube, Package, ArrowUpCircle, LifeBuoy, CheckCircle, Building, ShoppingCart, CalendarCheck, Sparkles, Wrench, Globe, DatabaseZap, FolderGit2, AppWindow } from 'lucide-react'; // Added AppWindow
 
 export const APP_NAME = "Marc De Jesus Portfolio";
 export const BRAND_NAME = "Marc De Jesus";
@@ -260,8 +260,8 @@ export const TOOLSET: Tool[] = [
   { name: 'VS Code', icon: Code },
   { name: 'Git', icon: GitBranch },
   { name: 'GitHub', icon: Github },
-  { name: 'Docker', icon: GitBranch },
-  { name: 'AI', icon: Cpu },
+  { name: 'Docker', icon: GitBranch }, // Changed to GitBranch icon
+  { name: 'AI', icon: Cpu },           // Added AI
   // Platforms
   { name: 'Vercel', icon: Triangle, dataAiHint: 'Vercel logo' },
   { name: 'AWS', icon: Cloud, dataAiHint: 'AWS logo' },
@@ -413,6 +413,46 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
   },
 ];
 
+export const MOBILE_APP_PACKAGES: ServicePackage[] = [
+  {
+    id: 'essential-mobile-app',
+    title: 'Essential Mobile App',
+    description: 'Get your idea off the ground with a sleek, functional mobile app for iOS & Android. Perfect for MVPs or simple utilities.',
+    originalPriceInfo: 'Starting at $1,999',
+    priceInfo: 'Launch Sale: Starting at $999',
+    icon: Smartphone,
+    features: [
+      { text: 'Up to 3 Core Screens', icon: CheckCircle },
+      { text: 'Basic UI/UX Design', icon: CheckCircle },
+      { text: 'Core Feature Implementation', icon: CheckCircle },
+      { text: 'Cross-Platform (React Native)', icon: CheckCircle },
+      { text: 'App Store Submission Guidance', icon: CheckCircle },
+    ],
+    idealFor: ['Startups', 'Entrepreneurs', 'Utility Apps'],
+    ctaLink: '/contact?service=essential-mobile-app',
+    ctaText: 'Start My App'
+  },
+  {
+    id: 'pro-mobile-app',
+    title: 'Pro Mobile App',
+    description: 'A comprehensive mobile app solution with custom features, API integrations, and a polished user experience for iOS & Android.',
+    originalPriceInfo: 'Starting at $4,999',
+    priceInfo: 'Launch Sale: Starting at $2,499',
+    icon: Layers, // Using Layers for a more "pro" feel
+    features: [
+      { text: 'Up to 7 Custom Screens', icon: CheckCircle },
+      { text: 'Advanced UI/UX Design (Figma)', icon: CheckCircle },
+      { text: 'API Integration / Backend Setup', icon: CheckCircle },
+      { text: 'User Authentication & Profiles', icon: CheckCircle },
+      { text: 'Push Notifications (Basic Setup)', icon: CheckCircle },
+    ],
+    idealFor: ['Growing Businesses', 'SaaS Companion Apps', 'Social Platforms'],
+    ctaLink: '/contact?service=pro-mobile-app',
+    ctaText: 'Develop Pro App'
+  },
+];
+
+
 export const SERVICE_UPGRADES: ServiceUpgrade[] = [
   {
     id: 'booking-system',
@@ -477,4 +517,4 @@ export const SUBSCRIPTION_SERVICE: SubscriptionService = {
   ctaText: 'Secure Your Site'
 };
 
-
+    
