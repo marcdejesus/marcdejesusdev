@@ -115,11 +115,11 @@ export const PROJECTS: Project[] = [
     category: 'Web Development',
     shortDescription: 'A retrowave themed typing trainer where users improve typing speed while evading police, featuring leaderboards, saved progress, and a music player.',
     longDescription: 'Immerse yourself in the neon-drenched world of Retro Type Wave, a unique typing trainer with a thrilling retrowave aesthetic. Sharpen your typing skills by accurately typing words and phrases to outrun a relentless police chase. The game features competitive leaderboards to track your high scores, progress saved locally via cookies, an integrated music player with retrowave tracks, and is optimized for search engines with Google AdSense integration for monetization. Can you type fast enough to escape?',
-    coverImageUrl: 'https://placehold.co/600x400.png',
+    coverImageUrl: '/rtw.png',
     dataAiHint: 'retrowave typing game',
     technologies: ['React', 'JavaScript', 'HTML5', 'CSS3', 'SEO', 'Google AdSense', 'Cookies', 'Leaderboards', 'Music Player'],
     liveDemoUrl: 'https://retrotypewave.com',
-    // githubUrl: 'your-github-link-here', // Add if available
+    githubUrl: 'https://github.com/marcdejesus/retrotypewave',
     role: 'Full-Stack Developer',
     duration: 'Personal Project'
   }

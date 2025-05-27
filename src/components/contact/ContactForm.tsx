@@ -1,9 +1,9 @@
-
 'use client';
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -26,26 +26,99 @@ import {
 import { toast } from "@/hooks/use-toast";
 import { CONTACT_FORM_OPTIONS, SOCIAL_LINKS } from "@/lib/constants";
 import { contactFormSchema, type ContactFormValues, defaultValues } from "./ContactFormFields";
-import { Send } from "lucide-react";
+import { initEmailJS } from "@/lib/emailjs";
+import { useEmailJS } from "@/hooks/use-emailjs";
+import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox"; // Import Checkbox
 import { Label } from "@/components/ui/label"; // Import Label for direct use with checkbox
 
 export function ContactForm() {
+  const { isLoading, error, sendContactForm, sendMarketingEmail, clearError } = useEmailJS();
+  
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues,
     mode: "onChange",
   });
 
+  // Initialize Email.js on component mount
+  useEffect(() => {
+    initEmailJS();
+  }, []);
+
+  // Clear any previous errors when form data changes
+  useEffect(() => {
+    if (error) {
+      clearError();
+    }
+  }, [form.watch(), clearError, error]);
+
   async function onSubmit(data: ContactFormValues) {
-    console.log(data); // This will now include subscribeToMarketing
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you as soon as possible.",
-    });
-    form.reset();
+    try {
+      // Send contact form email
+      const contactSuccess = await sendContactForm({
+        name: data.name,
+        email: data.email,
+        projectType: data.projectType,
+        projectDetails: data.projectDetails,
+        budgetRange: data.budgetRange,
+        timeline: data.timeline,
+        socialLink: data.socialLink,
+      });
+
+      if (!contactSuccess) {
+        return; // Error handling is done by the hook
+      }
+
+      // Send marketing subscription email if user opted in
+      let marketingSuccess = true;
+      if (data.subscribeToMarketing) {
+        marketingSuccess = await sendMarketingEmail({
+          name: data.name,
+          email: data.email,
+          projectType: data.projectType,
+        });
+
+        if (!marketingSuccess) {
+          console.warn('Marketing subscription email failed, but contact email was sent successfully');
+        }
+      }
+
+      // Show success message
+      toast({
+        title: "Message Sent Successfully!",
+        description: data.subscribeToMarketing 
+          ? marketingSuccess 
+            ? "Thank you for reaching out and subscribing to updates. I'll get back to you as soon as possible."
+            : "Your message was sent successfully. However, there was an issue with the marketing subscription. I'll get back to you as soon as possible."
+          : "Thank you for reaching out. I'll get back to you as soon as possible.",
+        duration: 5000,
+      });
+
+      form.reset();
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Message Failed to Send",
+        description: "There was an unexpected error. Please try again or contact me directly at marcdejesusdev@gmail.com",
+        variant: "destructive",
+        duration: 7000,
+      });
+    }
   }
+
+  // Show error toast when error state changes
+  useEffect(() => {
+    if (error) {
+      toast({
+        title: "Error",
+        description: error,
+        variant: "destructive",
+        duration: 5000,
+      });
+    }
+  }, [error]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -248,9 +321,9 @@ export function ContactForm() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" size="lg" disabled={form.formState.isSubmitting} className="w-full sm:w-auto">
-                  {form.formState.isSubmitting ? "Sending..." : "Send Message"}
-                  {!form.formState.isSubmitting && <Send className="ml-2 h-5 w-5" />}
+                <Button type="submit" size="lg" disabled={isLoading} className="w-full sm:w-auto">
+                  {isLoading ? "Sending..." : "Send Message"}
+                  {!isLoading && <Send className="ml-2 h-5 w-5" />}
                 </Button>
               </div>
             </form>
@@ -300,3 +373,4 @@ export function ContactForm() {
     </motion.section>
   );
 }
+
