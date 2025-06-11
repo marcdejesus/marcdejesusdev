@@ -66,42 +66,5 @@ export interface UpdatePost { // Renamed from BlogPost
   tags?: string[];
 }
 
-// Types for Services Section
-export interface ServiceFeature {
-  text: string;
-  icon?: LucideIcon; // Optional icon for the feature
-}
 
-export interface ServicePackage {
-  id: string;
-  title: string;
-  description: string;
-  priceInfo: string; // e.g., "Starting at $X" or "Contact for Quote"
-  originalPriceInfo?: string; // For showing original price during sales
-  features: ServiceFeature[];
-  icon?: LucideIcon;
-  idealFor: string[]; // e.g., ["Restaurants", "Barbershops"]
-  ctaLink: string; // Link for call to action, likely /contact
-  ctaText: string;
-}
-
-export interface ServiceUpgrade {
-  id: string;
-  title: string;
-  description: string;
-  icon?: LucideIcon;
-  relatedPackages?: string[]; // IDs of packages this upgrade is relevant for
-}
-
-export interface SubscriptionService {
-  id: string;
-  title: string;
-  description: string;
-  priceInfo: string;
-  originalPriceInfo?: string; // For showing original price during sales
-  features: ServiceFeature[];
-  icon?: LucideIcon;
-  ctaLink: string;
-  ctaText: string;
-}
 

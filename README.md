@@ -9,7 +9,7 @@ A modern, responsive portfolio website  showcasing digital solutions and web dev
 - **About Me Section**: Professional bio, core skills, and toolset with personal touch
 - **Contact Form**: Interactive contact form with EmailJS integration for project inquiries
 - **Blog System**: Content management for sharing insights and updates
-- **Services Pages**: Detailed service offerings and capabilities
+
 - **SEO Optimized**: Comprehensive SEO setup with meta tags, sitemap, and robots.txt
 - **Performance Optimized**: Image optimization, caching headers, and security headers
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
@@ -107,7 +107,7 @@ src/
 │   ├── blog/           # Blog system
 │   ├── contact/        # Contact page
 │   ├── projects/       # Projects showcase
-│   ├── services/       # Services pages
+
 │   └── ...
 ├── components/         # Reusable React components
 ├── hooks/             # Custom React hooks
