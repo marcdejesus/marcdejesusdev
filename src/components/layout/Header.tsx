@@ -40,7 +40,7 @@ export function Header() {
     ))
   );
 
-  const headerBrandText = "Marc De Jesus | Software Engineer";
+  const headerBrandText = "Marc De Jesus";
 
   return (
     <header className={cn(
