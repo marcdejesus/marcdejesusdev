@@ -199,7 +199,7 @@ For questions or issues:
 
 ## 🔗 Links
 
-- **Live Site**: [https://marcdejesus.dev](https://marcdejesus.dev)
+- **Live Site**: [https://marcdejesusdev.com](https://marcdejesusdev.com)
 - **GitHub**: [https://github.com/marcdejesus/marcdejesusdev](https://github.com/marcdejesus/marcdejesusdev)
 
 

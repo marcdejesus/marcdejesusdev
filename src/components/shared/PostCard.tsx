@@ -4,18 +4,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { format } from 'date-fns';
-import type { UpdatePost } from '@/types'; // Changed from BlogPost
+import type { UpdatePost } from '@/types';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CalendarDays } from 'lucide-react';
 
-interface BlogPostCardProps {
-  post: UpdatePost; // Changed from BlogPost
+interface PostCardProps {
+  post: UpdatePost;
   index: number;
+  urlPrefix: string; // e.g., "/blog" or "/updates"
+  imageHint?: string; // Custom data-ai-hint
 }
 
-export function BlogPostCard({ post, index }: BlogPostCardProps) {
+export function PostCard({ post, index, urlPrefix, imageHint }: PostCardProps) {
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { 
@@ -41,7 +43,7 @@ export function BlogPostCard({ post, index }: BlogPostCardProps) {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover"
-            data-ai-hint={post.dataAiHint || 'blog post image'}
+            data-ai-hint={imageHint || post.dataAiHint || 'post image'}
           />
         </div>
         <CardHeader>
@@ -66,7 +68,7 @@ export function BlogPostCard({ post, index }: BlogPostCardProps) {
         </CardContent>
         <CardFooter className="pt-4">
           <Button asChild variant="default" size="sm" className="w-full">
-            <Link href={`/blog/${post.slug}`}>
+            <Link href={`${urlPrefix}/${post.slug}`}>
               Read More <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -74,4 +76,4 @@ export function BlogPostCard({ post, index }: BlogPostCardProps) {
       </Card>
     </motion.div>
   );
-}
+} 
