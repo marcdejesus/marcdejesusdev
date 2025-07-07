@@ -7,6 +7,7 @@ export const BRAND_NAME = "Marc De Jesus";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
   { label: 'About', href: '/about' },
   { label: 'Updates', href: '/updates' },

@@ -334,13 +334,21 @@ export function ContactForm() {
             <p className="text-muted-foreground">
               You can also reach me directly via email or connect on social media. I aim to respond to all inquiries within 24-48 hours.
             </p>
-            <div>
+                         <div>
+              <h4 className="font-semibold mb-1">Phone</h4>
+              <a href="tel:+15862210732" className="text-primary hover:underline text-lg font-medium">(586) 221-0732</a>
+            </div>
+             <div>
               <h4 className="font-semibold mb-1">Email</h4>
               <a href="mailto:marcdejesusdev@gmail.com" className="text-primary hover:underline">marcdejesusdev@gmail.com</a>
             </div>
              <div>
-              <h4 className="font-semibold mb-2">Location</h4>
-              <p className="text-muted-foreground">Macomb, MI (Remote/Hybrid)</p>
+              <h4 className="font-semibold mb-2">Service Area</h4>
+              <p className="text-muted-foreground">
+                Based in Macomb, Michigan<br/>
+                <strong>Serving all of Michigan statewide</strong><br/>
+                Remote services available nationwide
+              </p>
             </div>
             <div>
               <h4 className="font-semibold mb-3">Connect with me:</h4>

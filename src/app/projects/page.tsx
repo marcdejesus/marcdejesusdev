@@ -4,31 +4,31 @@ import { PROJECTS } from '@/lib/constants';
 import { generateSEO, SITE_CONFIG } from '@/lib/seo';
 
 export const metadata: Metadata = generateSEO({
-  title: 'Projects',
-  description: 'Explore a comprehensive collection of web development projects, mobile applications, and digital solutions created by Marc De Jesus. From React and Next.js applications to AI-powered tools.',
+  title: 'Web Development Projects - Macomb MI Developer Portfolio',
+  description: 'Explore web development projects by Marc De Jesus, Macomb Michigan developer. React, Next.js, mobile apps, and AI-powered solutions for Michigan businesses.',
   canonical: `${SITE_CONFIG.url}/projects`,
   keywords: [
-    'projects',
-    'portfolio',
-    'web development projects',
-    'React projects',
-    'Next.js applications',
-    'mobile apps',
-    'UI/UX design',
-    'full stack development',
-    'JavaScript projects',
-    'TypeScript projects',
+    'web development projects Michigan',
+    'React projects Macomb MI',
+    'Next.js portfolio Michigan',
+    'mobile app development portfolio',
+    'Michigan developer projects',
+    'custom website examples',
+    'AI web development projects',
+    'full stack development portfolio',
+    'UI/UX design Michigan',
+    'Macomb web developer work'
   ],
   openGraph: {
-    title: 'Projects - Marc De Jesus Portfolio',
-    description: 'Explore a comprehensive collection of web development projects and digital solutions.',
+    title: 'Web Development Projects - Marc De Jesus Michigan Portfolio',
+    description: 'Professional web development project portfolio showcasing React, Next.js, and mobile applications for Michigan businesses.',
     type: 'website',
     images: [
       {
         url: '/hero.png',
         width: 1200,
         height: 630,
-        alt: 'Marc De Jesus Projects Portfolio',
+        alt: 'Marc De Jesus Web Development Projects Michigan',
       },
     ],
   },

@@ -1,11 +1,35 @@
 import type { Metadata } from 'next';
 import { AboutContent } from '@/components/about/AboutContent';
-import { APP_NAME } from '@/lib/constants';
+import { generateSEO, SITE_CONFIG } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: `About Me | ${APP_NAME}`,
-  description: `Learn more about the skills, experience, and passion of Marc De Jesus. Discover the journey and expertise in digital solutions.`,
-};
+export const metadata: Metadata = generateSEO({
+  title: 'About Marc De Jesus - Web Developer in Macomb, Michigan',
+  description: 'Meet Marc De Jesus, a skilled full-stack developer based in Macomb, MI. Central Michigan University graduate serving Michigan statewide with professional web development services.',
+  keywords: [
+    'Marc De Jesus',
+    'web developer Macomb Michigan',
+    'Central Michigan University graduate',
+    'Metro Detroit developer',
+    'full stack developer Michigan',
+    'React developer Macomb',
+    'CMU computer science graduate',
+    'Michigan web developer'
+  ],
+  canonical: `${SITE_CONFIG.url}/about`,
+  openGraph: {
+    title: 'About Marc De Jesus - Michigan Web Developer',
+    description: 'Central Michigan University graduate providing modern web development services throughout Michigan.',
+    type: 'profile',
+    images: [
+      {
+        url: '/headshot.jpg',
+        width: 400,
+        height: 400,
+        alt: 'Marc De Jesus - Web Developer Macomb Michigan',
+      },
+    ],
+  },
+});
 
 export default function AboutPage() {
   return (

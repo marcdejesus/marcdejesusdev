@@ -70,15 +70,15 @@ export function AboutContent() {
             <h1 className="text-4xl font-bold mb-6">About Me</h1>
             <div className="prose prose-lg dark:prose-invert max-w-none space-y-6">
               <p>
-                Creative and detail-oriented Software Engineer with a foundation in full-stack development and a strong passion for user-centered design.
+                Creative and detail-oriented Software Engineer with a foundation in full-stack development and a strong passion for user-centered design. Based in Macomb, Michigan, I'm proud to serve local businesses throughout Metro Detroit while also working with clients nationwide.
               </p>
               <p>
-                My journey in tech has been fueled by a relentless curiosity and a desire to continuously learn and adapt to new technologies.
+                As a Central Michigan University graduate, I bring both technical expertise and Midwest work ethic to every project. My journey in tech has been fueled by a relentless curiosity and a desire to continuously learn and adapt to new technologies.
                 I believe in the power of collaboration and strive to build not just software, but also strong relationships with clients and team members.
               </p>
               <p>
                 Beyond coding and design, I enjoy staying active, spending time with friends, trying new things, and learning new skills.
-                This balance helps me bring fresh perspectives to my professional work.
+                This balance helps me bring fresh perspectives to my professional work and understand the diverse needs of Michigan businesses.
               </p>
             </div>
           </div>

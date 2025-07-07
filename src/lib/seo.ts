@@ -198,6 +198,95 @@ export function generateOrganizationSchema() {
   }
 }
 
+export function generateLocalBusinessSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${SITE_CONFIG.url}/#localbusiness`,
+    name: 'Marc De Jesus - Web Development Services',
+    alternateName: 'De Jesus Digital Solutions',
+    description: 'Professional web development, UI/UX design, and mobile app development services in Macomb, Michigan and statewide Michigan.',
+    url: SITE_CONFIG.url,
+    telephone: '+1-586-221-0732',
+    email: 'marcdejesusdev@gmail.com',
+    founder: {
+      '@type': 'Person',
+      name: BRAND_NAME,
+      url: SITE_CONFIG.url,
+      sameAs: [
+        'https://github.com/marcdejesus',
+        'https://linkedin.com/in/marcdejesusdev',
+        'https://twitter.com/marcdejesusdev',
+      ],
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Macomb',
+      addressRegion: 'MI',
+      postalCode: '48044',
+      addressCountry: 'US'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 42.6681,
+      longitude: -82.9282
+    },
+    areaServed: {
+      '@type': 'State',
+      name: 'Michigan',
+      containedInPlace: {
+        '@type': 'Country',
+        name: 'United States'
+      }
+    },
+    serviceType: [
+      'Web Development',
+      'Website Design',
+      'Mobile App Development',
+      'UI/UX Design',
+      'E-commerce Development',
+      'Custom Software Development',
+      'React Development',
+      'Next.js Development',
+      'AI Integration',
+      'SEO Services',
+      'Website Maintenance'
+    ],
+    openingHours: 'Mo-Fr 09:00-17:00',
+    priceRange: '$$',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Web Development Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Custom Website Development',
+            description: 'Modern, responsive websites built with React and Next.js'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Mobile App Development',
+            description: 'Cross-platform mobile applications using React Native'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'AI Integration Services',
+            description: 'Artificial intelligence integration for web applications'
+          }
+        }
+      ]
+    }
+  }
+}
+
 export function generateArticleSchema({
   title,
   description,

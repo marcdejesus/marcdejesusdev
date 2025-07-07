@@ -4,7 +4,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
-import { generateSEO, generatePersonSchema, generateWebsiteSchema, generateOrganizationSchema } from '@/lib/seo';
+import { generateSEO, generatePersonSchema, generateWebsiteSchema, generateOrganizationSchema, generateLocalBusinessSchema } from '@/lib/seo';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,6 +29,7 @@ export default function RootLayout({
   const personSchema = generatePersonSchema();
   const websiteSchema = generateWebsiteSchema();
   const organizationSchema = generateOrganizationSchema();
+  const localBusinessSchema = generateLocalBusinessSchema();
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -49,6 +50,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
           }}
         />
       </head>
