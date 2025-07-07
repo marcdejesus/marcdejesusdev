@@ -53,7 +53,7 @@ export const PROJECTS: Project[] = [
     coverImageUrl: '/tymelyne.png',
     dataAiHint: 'ai learning app',
     technologies: ['React Native', 'MongoDB', 'OpenAI API', 'Node.js', 'AI/ML', 'Gamification', 'Social Features', 'Progress Tracking', 'Quizzes'],
-    liveDemoUrl: 'https://www.youtube.com/watch?v=placeholder_video_id', // Placeholder YouTube link
+    liveDemoUrl: 'https://aparr03.github.io/tymelyne_demo/',
     // githubUrl is intentionally omitted as it's closed-source
     client: 'Senior Design Capstone Project (Central Michigan University)',
     role: 'Project Lead / Developer',
