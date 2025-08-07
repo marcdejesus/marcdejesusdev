@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ExternalLink, Github, Code, Smartphone, Globe } from 'lucide-react';
+import tymelyne from '../assets/tymelyne.jpeg';
 import './Projects.css';
 
 const Projects = () => {
@@ -12,13 +13,13 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
+      title: 'Central Michigan University - Senior Design Project',
       category: 'Full Stack',
-      description: 'A modern e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, payment processing, inventory management, and real-time order tracking.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Socket.io'],
-      image: '/api/placeholder/600/400',
-      liveUrl: 'https://example-ecommerce.com',
-      githubUrl: 'https://github.com/username/ecommerce-platform',
+      description: 'An AI-powered mobile learning platform that generates personalized courses with interactive quizzes and gamified progression tracking. Developed for college capstone project and presented at Central Michigan University’s Engineering Expo. Tested by 50+ users during Expo with no bugs/issues and very positive feedback',
+      technologies: ['React Native', 'Node.js', 'MongoDB', 'Expo', 'Express', 'OpenAI API'],
+      image: tymelyne,
+      liveUrl: 'https://aparr03.github.io/tymelyne_demo/',
+      githubUrl: 'https://github.com/marcdejesus/TymeLyne',
       icon: Globe
     },
     {
@@ -27,32 +28,10 @@ const Projects = () => {
       category: 'Web Application',
       description: 'A collaborative task management application with drag-and-drop functionality, real-time updates, and team collaboration features. Built with modern React and Firebase.',
       technologies: ['React', 'Firebase', 'Material-UI', 'React DnD'],
-      image: '/api/placeholder/600/400',
+      image: './assets/placeholder/600/400',
       liveUrl: 'https://example-tasks.com',
       githubUrl: 'https://github.com/username/task-manager',
       icon: Code
-    },
-    {
-      id: 3,
-      title: 'Mobile Fitness Tracker',
-      category: 'Mobile App',
-      description: 'Cross-platform mobile app for fitness tracking with workout plans, progress monitoring, and social features. Includes integration with wearable devices and health APIs.',
-      technologies: ['React Native', 'Firebase', 'Redux', 'Health Kit'],
-      image: '/api/placeholder/600/400',
-      liveUrl: 'https://apps.apple.com/fitness-tracker',
-      githubUrl: 'https://github.com/username/fitness-tracker',
-      icon: Smartphone
-    },
-    {
-      id: 4,
-      title: 'Data Visualization Dashboard',
-      category: 'Analytics',
-      description: 'Interactive dashboard for business analytics with real-time data visualization, custom reports, and predictive analytics powered by machine learning algorithms.',
-      technologies: ['Vue.js', 'D3.js', 'Python', 'Django', 'PostgreSQL'],
-      image: '/api/placeholder/600/400',
-      liveUrl: 'https://example-analytics.com',
-      githubUrl: 'https://github.com/username/analytics-dashboard',
-      icon: Globe
     }
   ];
 
@@ -151,12 +130,20 @@ const Projects = () => {
                     className="project-card"
                   >
                     <div className="project-image">
-                      <div className="project-placeholder">
-                        <div className="placeholder-content">
-                          {React.createElement(projects[currentProject].icon, { size: 60 })}
-                          <p>Project Preview</p>
+                      {projects[currentProject].image ? (
+                        <img 
+                          src={projects[currentProject].image} 
+                          alt={projects[currentProject].title}
+                          className="project-image-content"
+                        />
+                      ) : (
+                        <div className="project-placeholder">
+                          <div className="placeholder-content">
+                            {React.createElement(projects[currentProject].icon, { size: 60 })}
+                            <p>Project Preview</p>
+                          </div>
                         </div>
-                      </div>
+                      )}
                       <div className="project-category">
                         {projects[currentProject].category}
                       </div>

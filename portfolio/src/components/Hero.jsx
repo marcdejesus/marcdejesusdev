@@ -41,14 +41,6 @@ const Hero = () => {
       </div>
       
       <div className="hero-content">
-        <motion.p
-          className="hero-greeting"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          Hello, I'm
-        </motion.p>
         
         <motion.h1
           className="hero-name"
@@ -67,16 +59,6 @@ const Hero = () => {
         >
           Full Stack<span className="space"></span>Developer
         </motion.h2>
-        
-        <motion.p
-          className="hero-description"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          Passionate about creating innovative digital solutions and building scalable web applications. 
-          I specialize in modern JavaScript frameworks and cloud technologies.
-        </motion.p>
         
         <motion.div
           className="hero-buttons"

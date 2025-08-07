@@ -21,7 +21,7 @@ const Resume = () => {
       company: 'Central Michigan University',
       location: 'Mount Pleasant, MI',
       period: '2021 - 2025',
-      description: 'Specialized in Software Engineering. Relevant Coursework: Data Structures, Algorithms, Computer Organization, Operating Systems, Computer Networks, Database Systems, Software Engineering, Artificial Intelligence, Machine Learning, and Cybersecurity.'
+      description: 'Relevant Coursework: Data Structures, Algorithms, Computer Organization, Operating Systems, Computer Networks, Database Systems, Software Engineering, Artificial Intelligence, Machine Learning, and Cybersecurity.'
     },
     {
       title: 'High School Diploma',
@@ -38,14 +38,14 @@ const Resume = () => {
       company: 'Google Career Certificates',
       location: 'Online',
       period: '2025',
-      description: 'Key Concepts: User-Centered Design, Design Thinking, Wireframing, Prototyping, and Usability Testing.'
+      description: 'Relevant Coursework: Build Wireframes and LowFidelity Prototypes, Conduct UX Research and Test Early Concepts, Create High-Fidelity Designs and Prototypes in Figma, Build Dynamic User Interfaces (UI) for Websites'
     },
     {
       title: 'AI Agent Developer',
       company: 'Vanderbilt University',
       location: 'Online',
       period: '2025',
-      description: 'Key Concepts: LLMs, Prompt Engineering, Reinforcement Learning, and AI Agents.'
+      description: 'Relevant Coursework: Agentic AI with Python, AI Agents and Agentic AI, Architecture in Python, Creating Custom AI Assistants, Prompt Engineering, AI Advanced Data Analysis, Trustworthy Generative AI'
     }
   ];
 

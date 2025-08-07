@@ -1,8 +1,23 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, User, MessageSquare, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, User, MessageSquare, CheckCircle, Github, Linkedin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
+
+// Custom X Icon Component
+const XIcon = ({ size = 24, className = "" }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 30 30" 
+    width={size} 
+    height={size} 
+    className={className}
+    fill="currentColor"
+  >
+    <path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"/>
+  </svg>
+);
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,9 +28,18 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  // Initialize EmailJS
+  useEffect(() => {
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (publicKey) {
+      emailjs.init(publicKey);
+    }
+  }, []);
 
   const contactInfo = [
     {
@@ -37,28 +61,56 @@ const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+    // Clear error when user starts typing
+    if (error) setError('');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration is missing. Please check your environment variables.');
+      }
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    }, 3000);
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Marc De Jesus',
+        },
+        publicKey
+      );
+
+      if (result.status === 200) {
+        setIsSubmitted(true);
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+          });
+        }, 3000);
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setError('Failed to send message. Please try again or contact me directly via email.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -133,12 +185,7 @@ const Contact = () => {
               variants={contactInfoVariants}
             >
               <div className="contact-info-content">
-                <h3>Let's Connect</h3>
-                <p>
-                  I'm always open to discussing new projects, creative ideas, 
-                  and opportunities to be part of your vision. Don't hesitate to reach out!
-                </p>
-
+                <h3>Contact Information</h3>
                 <div className="contact-methods">
                   {contactInfo.map((info, index) => {
                     const IconComponent = info.icon;
@@ -166,22 +213,32 @@ const Contact = () => {
                 </div>
 
                 <div className="social-links">
-                  <h4>Follow Me</h4>
+                  <h3>Connect With Me</h3>
                   <div className="social-buttons">
-                    {['LinkedIn', 'GitHub', 'Twitter'].map((social, index) => (
-                      <motion.a
-                        key={social}
-                        href={`#${social.toLowerCase()}`}
-                        className="social-btn"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                        transition={{ duration: 0.3, delay: 1.2 + index * 0.1 }}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        {social}
-                      </motion.a>
-                    ))}
+                    {[
+                      { name: 'GitHub', icon: Github, href: 'https://github.com/marcdejesus' },
+                      { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/marc-de-jesus-075185252/' },
+                      { name: 'X', icon: XIcon, href: 'https://x.com/marcdejesusdev' }
+                    ].map((social, index) => {
+                      const IconComponent = social.icon;
+                      return (
+                        <motion.a
+                          key={social.name}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="social-btn"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                          transition={{ duration: 0.3, delay: 1.2 + index * 0.1 }}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          title={social.name}
+                        >
+                          <IconComponent size={24} />
+                        </motion.a>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -261,6 +318,8 @@ const Contact = () => {
                     transition={{ duration: 0.2 }}
                   />
                 </div>
+
+                {error && <p className="error-message">{error}</p>}
 
                 <motion.button
                   type="submit"
