@@ -21,19 +21,13 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'john.doe@example.com',
-      href: 'mailto:john.doe@example.com'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: 'marcdejesusdev@gmail.com',
+      href: 'mailto:marcdejesusdev@gmail.com'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Macomb, MI',
       href: '#'
     }
   ];

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import marcdejesus from '../assets/marcdejesus.png';
 import './About.css';
 
 const About = () => {
@@ -60,38 +61,18 @@ const About = () => {
           <div className="about-grid">
             <motion.div className="about-text" variants={itemVariants}>
               <motion.p variants={itemVariants}>
-                I'm a passionate software engineer with over 5 years of experience in building 
-                scalable web applications and innovative digital solutions. My journey in technology 
-                started with a curiosity about how things work, which led me to pursue computer science 
-                and develop a deep love for problem-solving through code.
+                I'm a recent graduate from Central Michigan University with a Bachelor's degree in Computer Science. I'm currently seeking a full-time position in Full-Stack Development with strong mentorship andgrowth opportunities.
               </motion.p>
               
               <motion.p variants={itemVariants}>
-                I specialize in full-stack development with expertise in modern JavaScript frameworks, 
-                cloud technologies, and agile methodologies. I believe in writing clean, maintainable 
-                code and creating user experiences that make a difference. When I'm not coding, you'll 
-                find me exploring new technologies, contributing to open-source projects, or enjoying 
-                outdoor adventures.
+                I specialize in full-stack development with expertise in modern JavaScript frameworks, Cloud technologies, and Agile methodologies. I'm very passionate about continuous learning and always eager to take on new challenges.
               </motion.p>
               
-              <motion.p variants={itemVariants}>
-                My approach to software development is collaborative and user-focused. I enjoy working 
-                with cross-functional teams to turn complex problems into elegant solutions. Whether 
-                it's optimizing performance, implementing new features, or mentoring junior developers, 
-                I'm always eager to take on new challenges and grow professionally.
-              </motion.p>
             </motion.div>
             <motion.div className="about-image" variants={imageVariants}>
               <div className="image-container">
-                <div className="profile-placeholder">
-                  <div className="placeholder-content">
-                    <div className="placeholder-avatar">
-                      <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                      </svg>
-                    </div>
-                    <p>Your Photo Here</p>
-                  </div>
+                <div className="profile-image">
+                  <img src={marcdejesus} alt="Marc De Jesus" />
                 </div>
                 <motion.div
                   className="image-decoration decoration-1"

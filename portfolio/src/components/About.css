@@ -146,6 +146,7 @@
   position: absolute;
   border-radius: 50%;
   border: 2px solid rgba(59, 130, 246, 0.3);
+  z-index: 1;
 }
 
 .decoration-1 {
@@ -162,6 +163,28 @@
   top: 25px;
   left: 25px;
   border-style: dotted;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover img {
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {

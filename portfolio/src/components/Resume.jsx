@@ -10,86 +10,53 @@ const Resume = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const tabs = [
-    { id: 'experience', label: 'Experience', icon: Briefcase },
     { id: 'education', label: 'Education', icon: GraduationCap },
     { id: 'certifications', label: 'Certifications', icon: Award }
   ];
 
-  const experienceData = [
-    {
-      title: 'Senior Software Engineer',
-      company: 'Tech Solutions Inc.',
-      location: 'San Francisco, CA',
-      period: '2022 - Present',
-      description: 'Lead development of scalable web applications using React, Node.js, and AWS. Mentored junior developers and implemented CI/CD pipelines that reduced deployment time by 60%.'
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'Digital Innovations LLC',
-      location: 'New York, NY',
-      period: '2020 - 2022',
-      description: 'Developed and maintained multiple client projects using modern JavaScript frameworks. Collaborated with design teams to create responsive, user-friendly interfaces.'
-    },
-    {
-      title: 'Software Developer',
-      company: 'StartUp Ventures',
-      location: 'Austin, TX',
-      period: '2019 - 2020',
-      description: 'Built RESTful APIs and database architectures for a growing SaaS platform. Implemented automated testing that improved code quality and reduced bugs by 40%.'
-    }
-  ];
 
   const educationData = [
     {
-      title: 'Master of Science in Computer Science',
-      company: 'Stanford University',
-      location: 'Stanford, CA',
-      period: '2017 - 2019',
-      description: 'Specialized in Machine Learning and Software Engineering. Completed thesis on distributed systems optimization. GPA: 3.8/4.0'
+      title: 'Bachelor of Science in Computer Science',
+      company: 'Central Michigan University',
+      location: 'Mount Pleasant, MI',
+      period: '2021 - 2025',
+      description: 'Specialized in Software Engineering. Relevant Coursework: Data Structures, Algorithms, Computer Organization, Operating Systems, Computer Networks, Database Systems, Software Engineering, Artificial Intelligence, Machine Learning, and Cybersecurity.'
     },
     {
-      title: 'Bachelor of Science in Software Engineering',
-      company: 'University of California, Berkeley',
-      location: 'Berkeley, CA',
-      period: '2013 - 2017',
-      description: 'Graduated Magna Cum Laude with focus on algorithms and data structures. Led the Computer Science Society and organized multiple hackathons.'
+      title: 'High School Diploma',
+      company: 'L\'Anse Creuse High School North',
+      location: 'Macomb, MI',
+      period: '2017 - 2021',
+      description: 'Relevant Coursework: AP Computer Science, AP Calculus, AP Physics'
     }
   ];
 
   const certificationsData = [
     {
-      title: 'AWS Certified Solutions Architect',
-      company: 'Amazon Web Services',
+      title: 'Google UX Design',
+      company: 'Google Career Certificates',
       location: 'Online',
-      period: '2023',
-      description: 'Professional-level certification demonstrating expertise in designing and deploying scalable systems on AWS platform.'
+      period: '2025',
+      description: 'Key Concepts: User-Centered Design, Design Thinking, Wireframing, Prototyping, and Usability Testing.'
     },
     {
-      title: 'Certified Kubernetes Administrator',
-      company: 'Cloud Native Computing Foundation',
+      title: 'AI Agent Developer',
+      company: 'Vanderbilt University',
       location: 'Online',
-      period: '2022',
-      description: 'Validates skills and knowledge to perform the responsibilities of a Kubernetes administrator.'
-    },
-    {
-      title: 'React Developer Certification',
-      company: 'Meta (Facebook)',
-      location: 'Online',
-      period: '2021',
-      description: 'Advanced certification covering React fundamentals, state management, and modern development practices.'
+      period: '2025',
+      description: 'Key Concepts: LLMs, Prompt Engineering, Reinforcement Learning, and AI Agents.'
     }
   ];
 
   const getTabData = (tabId) => {
     switch (tabId) {
-      case 'experience':
-        return experienceData;
       case 'education':
         return educationData;
       case 'certifications':
         return certificationsData;
       default:
-        return experienceData;
+        return educationData;
     }
   };
 
