@@ -198,7 +198,7 @@ const Contact = () => {
                         transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
                         whileHover={{ scale: 1.05 }}
                       >
-                        <a href={info.href} className="contact-link">
+                        <a href={info.href} className="contact-link" aria-label={info.label}>
                           <div className="contact-icon">
                             <IconComponent size={24} />
                           </div>
@@ -212,13 +212,15 @@ const Contact = () => {
                   })}
                 </div>
 
+                <div className="section-divider" />
+
                 <div className="social-links">
                   <h3>Connect With Me</h3>
                   <div className="social-buttons">
                     {[
-                      { name: 'GitHub', icon: Github, href: 'https://github.com/marcdejesus' },
-                      { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/marc-de-jesus-075185252/' },
-                      { name: 'X', icon: XIcon, href: 'https://x.com/marcdejesusdev' }
+                      { name: 'GitHub', brand: 'github', icon: Github, href: 'https://github.com/marcdejesus' },
+                      { name: 'LinkedIn', brand: 'linkedin', icon: Linkedin, href: 'https://www.linkedin.com/in/marc-de-jesus-075185252/' },
+                      { name: 'X', brand: 'x', icon: XIcon, href: 'https://x.com/marcdejesusdev' }
                     ].map((social, index) => {
                       const IconComponent = social.icon;
                       return (
@@ -228,6 +230,8 @@ const Contact = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="social-btn"
+                          data-brand={social.brand}
+                          aria-label={social.name}
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                           transition={{ duration: 0.3, delay: 1.2 + index * 0.1 }}
