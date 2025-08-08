@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://marcdejesus.dev/sitemap.xml
+
+
