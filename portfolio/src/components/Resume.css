@@ -1,0 +1,229 @@
+.resume {
+  padding: 6rem 0;
+  background: #1e293b;
+}
+
+.resume-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.resume-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #60a5fa;
+  position: relative;
+}
+
+.resume-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #60a5fa;
+  border-radius: 2px;
+}
+
+.resume-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border: 2px solid #334155;
+  background: #0f172a;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.tab-button:hover {
+  border-color: #60a5fa;
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.tab-button.active {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.resume-content-area {
+  position: relative;
+  min-height: 400px;
+}
+
+.tab-content {
+  width: 100%;
+}
+
+.resume-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.resume-card {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.resume-card:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.resume-card:hover::before {
+  opacity: 1;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card-title-section {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+.card-company {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #60a5fa;
+  margin: 0;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+  min-width: fit-content;
+}
+
+.card-period,
+.card-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.card-period svg,
+.card-location svg {
+  color: #64748b;
+}
+
+.card-description {
+  margin-top: 1rem;
+}
+
+.card-description p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .resume {
+    padding: 4rem 0;
+  }
+  
+  .resume-tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .tab-button {
+    width: 200px;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .resume-card {
+    padding: 1.5rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .card-meta {
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .card-company {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-card {
+    padding: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-description p {
+    font-size: 0.95rem;
+  }
+}
