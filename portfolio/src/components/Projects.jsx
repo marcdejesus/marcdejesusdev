@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ExternalLink, Github, Code, Smartphone, Globe } from 'lucide-react';
 import tymelyne from '../assets/tymelyne.jpeg';
+import recipedium from '../assets/recipedium.png';
 import './Projects.css';
 
 const Projects = () => {
@@ -16,7 +17,7 @@ const Projects = () => {
       title: 'Central Michigan University - Senior Design Project',
       category: 'Full Stack',
       description: 'An AI-powered mobile learning platform that generates personalized courses with interactive quizzes and gamified progression tracking. Developed for college capstone project and presented at Central Michigan University’s Engineering Expo. Tested by 50+ users during Expo with no bugs/issues and very positive feedback',
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'Expo', 'Express', 'OpenAI API'],
+      technologies: ['React Native', 'Node.js', 'MongoDB', 'Expo', 'Express.js', 'OpenAI API', 'Docker'],
       image: tymelyne,
       liveUrl: 'https://aparr03.github.io/tymelyne_demo/',
       githubUrl: 'https://github.com/marcdejesus/TymeLyne',
@@ -24,13 +25,13 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Task Management App',
-      category: 'Web Application',
-      description: 'A collaborative task management application with drag-and-drop functionality, real-time updates, and team collaboration features. Built with modern React and Firebase.',
-      technologies: ['React', 'Firebase', 'Material-UI', 'React DnD'],
-      image: './assets/placeholder/600/400',
-      liveUrl: 'https://example-tasks.com',
-      githubUrl: 'https://github.com/username/task-manager',
+      title: 'Recipedium',
+      category: 'Full Stack',
+      description: 'A modern, full-stack recipe sharing platform where users can discover, create, share, and save their favorite recipes. Built with Next.js and Express.js, featuring a clean UI, robust authentication, and comprehensive recipe management capabilities.',
+      technologies: ['Next.js', 'MongoDB', 'Node.js', 'Express.js', 'Docker'],
+      image: recipedium,
+      liveUrl: 'https://recipedium.vercel.app/',
+      githubUrl: 'https://github.com/marcdejesus/recipedium',
       icon: Code
     }
   ];
